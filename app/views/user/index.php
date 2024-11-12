@@ -2,6 +2,7 @@
     <div class="text">
         <div id="dashbord" class="content">
             <div class="head">
+                <?php Flasher::flash(); ?>
                 <h2>Dashboard</h2>
             </div>
         </div>
@@ -11,12 +12,14 @@
                     <i class="bx bxs-plus-circle"></i>
                 </div>
                 <div class="search" id="searching">
-                    <i class="bx bx-search-alt-2"></i>
-                    <input
-                        class="search-input"
-                        id="searchUser"
-                        type="search"
-                        placeholder="Search" />
+                    <form action="<?= BASEURL; ?>user/cari" method="post"><i class="bx bx-search-alt-2"></i>
+                        <input
+                            class="search-input"
+                            id="searchMenu"
+                            type="text"
+                            name="keyword"
+                            placeholder="Search" />
+                    </form>
                 </div>
             </div>
             <div class="table-container" id="tableContainer">
@@ -49,13 +52,85 @@
                                 <td><?= $user['umur']; ?></td>
                                 <td><?= $user['tipe_diet']; ?></td>
                                 <td><?= $user['gender']; ?></td>
-                                <td><i class="bx bx-edit-alt edit-icon" onclick="" title="Edit"></i>
-                                    <i class="bx bx-trash delete-icon" onclick="" title="Delete"></i>
+                                <td><a href="<?= BASEURL; ?>user/edit/<?= $user['id_user'] ?>" id="editUser" onclick="event.preventDefault(); openModal();"><i class="bx bx-edit-alt edit-icon" title="Edit" data-id="<?= $user['id_user']; ?>"></i></a>
+                                    <a href="<?= BASEURL; ?>user/hapus/<?= $user['id_user'] ?>" onclick="return confirm('yakin?');"><i class="bx bx-trash delete-icon" onclick="" title="Delete"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div id="addUserModal" class="modal-panel">
+            <div class="contain-modal">
+                <form action="<?= BASEURL; ?>user/tambah" method="post" id="adduserForm" enctype="multipart/form-data">
+                    <h2 class="Title-label">Tambah Pengguna</h2>
+                    <div class="form-container">
+                        <!-- Kolom Kiri -->
+                        <div class="left-column">
+                            <div class="form-group">
+                                <label for="id_user">ID user</label>
+                                <input type="text" id="id_user" name="id_user" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_user">Nama user</label>
+                                <input type="text" id="nama_user" name="nama_lengkap" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="pasword" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="no_hp">No hp</label>
+                                <input type="number" id="no_hp" name="no_hp" required />
+                            </div>
+                        </div>
+
+                        <!-- Kolom Kanan -->
+                        <div class="right-column">
+                            <div class="form-group">
+                                <label for="berat_badan">Berat badan</label>
+                                <input type="number" id="berat_badan" name="berat_badan" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="tinggi_badan">Tinggi badan</label>
+                                <input type="number" id="tinggi_badan" name="tinggi_badan" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="umur">Umur</label>
+                                <input type="number" id="umur" name="umur" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="tipe_diet">Tipe diet</label>
+                                <select id="tipe_diet" name="tipe_diet" required>
+                                    <option value="Menambah berat badan">Menambah berat badan</option>
+                                    <option value="Mengurangi berat badan">Mengurangi berat badan</option>
+                                    <option value="Mempertahankan berat badan">Mempertahankan berat badan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="button button-save" id="submitUser">
+                            Simpan
+                        </button>
+                        <button type="button" class="button button-cancel" id="cancelUser">
+                            Batal
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
 </section>

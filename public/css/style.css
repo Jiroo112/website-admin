@@ -300,6 +300,11 @@ form {
     text-decoration: none; /* Menghapus garis bawah */
 }
 
+#data_user a{
+    color: inherit; /* Menggunakan warna dari elemen induknya */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
 /* Kolom kiri */
 .left-column {
     flex: 1;
@@ -315,6 +320,8 @@ form {
 /* Style untuk semua input dan select */
 input[type="text"],
 input[type="number"],
+input[type="email"],
+input[type="password"],
 select,
 textarea {
     width: 100%;

@@ -3,10 +3,11 @@
 class Menu extends Controller{
 
     public function index() {
+        $data['js'] = 'menu.js';
         $data['menu'] = $this->model('Menu_model')->getAllMenu();
         $this->view('templates/header', $data);
         $this->view('menu/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/footer', $data);
     }
 
     public function addMenu(){

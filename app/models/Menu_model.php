@@ -112,5 +112,4 @@ class Menu_model{
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultset();
     }
-
 }
