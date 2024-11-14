@@ -44,7 +44,7 @@
               </a>
             </li>
             <li class="navigation-link">
-              <a href="#" onclick="">
+              <a href="<?=BASEURL;?>buku" onclick="">
                 <i class="bx bx-book icon"></i>
                 <span class="text nav-text">Daftar Buku</span>
               </a>

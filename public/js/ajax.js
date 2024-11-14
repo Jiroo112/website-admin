@@ -1,5 +1,6 @@
 $(function(){
-    $('.addMenu').on('click', function(){
+    console.log("ok");
+    $('#addMenu').on('click', function(){
         $('.Title-label').html('Tambah data Menu');
         $('.button-groupl[type=submit]').html('Tambah data');
     });
@@ -32,7 +33,7 @@ $(function(){
         });
     });
 
-    $('.addUser').on('click', function(){
+    $('#addUser').on('click', function(){
         $('.Title-label').html('Tambah data User');
         $('.button-groupl[type=submit]').html('Tambah data');
     });
@@ -61,6 +62,37 @@ $(function(){
                 $("#umur").val(data.umur);
                 $("#tipe_diet").val(data.tipe_diet);
                 $("#gender").val(data.gender);
+                console.log(data);
+            }      
+        });
+    });
+
+    $('#addBuku').on('click', function(){
+        $('.Title-label').html('Tambah data Buku');
+        $('.button-groupl[type=submit]').html('Tambah data');
+
+    });
+
+    $('.editBuku-icon').on('click', function(){
+        $('.Title-label').html('Ubah data buku');
+        $('#submitMenu').html('Ubah data');
+        $('.modal-panel form').attr('action', 'http://localhost/admin-adek/public/buku/ubah');
+
+        const id = $(this).data('id');
+        console.log(id);
+
+        $.ajax({
+            url: 'http://localhost/admin-adek/public/buku/edit',
+            data: {id, id},
+            method: 'post',
+            dataType: 'json',
+            success: function(data){
+                $("#id_buku").val(data.id_buku);
+                $("#judul").val(data.judul);
+                $("#kategori").val(data.kategori);
+                $("#isi_buku").val(data.isi_buku);
+                $("#fileName").html(data.gambar);
+                $("#username").val(data.username);
                 console.log(data);
             }      
         });

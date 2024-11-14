@@ -228,6 +228,11 @@ header .imagetext .header-text{
     background: transparent;
 }
 
+.search-form{
+    margin: 0px;
+    padding: 0px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -305,6 +310,11 @@ form {
     text-decoration: none; /* Menghapus garis bawah */
 }
 
+#data_buku a{
+    color: inherit; /* Menggunakan warna dari elemen induknya */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
 /* Kolom kiri */
 .left-column {
     flex: 1;
@@ -345,6 +355,7 @@ textarea {
 
 .button-group {
     margin-top: 20px;
+    
 }
 
 .button {

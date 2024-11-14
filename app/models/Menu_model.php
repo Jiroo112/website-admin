@@ -25,7 +25,7 @@ class Menu_model{
         $query = "INSERT INTO menu VALUES (:id_menu, :nama_menu, :kategori, :protein, :karbohidrat, :lemak, :kalori, :resep, :gambar ,:satuan)";
 
         $fileName = $data['gambar']['name'];
-        $uploadDirectory = "../app/upload/";
+        $uploadDirectory = "../app/upload/menu/";
         $filePath = $uploadDirectory . $fileName;
 
         move_uploaded_file($data['gambar']['tmp_name'], $filePath);
@@ -80,11 +80,11 @@ class Menu_model{
     // Handle file upload jika ada file baru
     if(isset($data['gambar']) && $data['gambar']['error'] === 0) {
         $fileName = $data['gambar']['name'];
-        $uploadDirectory = "../app/upload/";
+        $uploadDirectory = "../app/upload/buku";
         $filePath = $uploadDirectory . $fileName;
         move_uploaded_file($data['gambar']['tmp_name'], $filePath);
     } else {
-        $fileName = $data['gambar']['name'];
+        $fileName = $gambarLama;
     }
 
     $this->db->query($query);

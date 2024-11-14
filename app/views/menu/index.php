@@ -3,7 +3,7 @@
     <div id="dashbord" class="content">
       <div class="head">
         <?php Flasher::flash(); ?>
-        <h2>Daftar menu</h2>
+        <h2>Buku</h2>
       </div>
     </div>
     <div class="container">
@@ -11,17 +11,16 @@
         <div class="plus" id="addMenu" aria-label="Add User">
           <i class="bx bxs-plus-circle"></i>
         </div>
-        <div class="search" id="searching">
-          <form action="<?= BASEURL; ?>menu/cari" method="post">
-            <i class="bx bx-search-alt-2"></i>
+        <form action="<?= BASEURL; ?>buku/cari" method="post" class="search-form">
+          <div class="search" id="searching"><i class="bx bx-search-alt-2"></i>
             <input
               class="search-input"
               id="searchMenu"
               type="text"
               name="keyword"
               placeholder="Search" />
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
       <div class="table-container" id="tableMenu">
         <table border="1" cellpadding="10" cellspacing="0">
@@ -42,7 +41,7 @@
           </thead>
           <tbody id="data_menu">
             <?php foreach ($data['menu'] as $menu): ?>
-              <?php $imgSrc = '/admin-adek/app/upload/' . $menu['gambar'] ?>
+              <?php $imgSrc = '/admin-adek/app/upload/menu/' . $menu['gambar'] ?>
               <tr>
                 <td><?= $menu['id_menu']; ?></td>
                 <td><?= $menu['nama_menu']; ?></td>
@@ -63,6 +62,7 @@
         </table>
       </div>
     </div>
+  </div>
   </div>
   <div id="addMenuModal" class="modal-panel">
     <div class="contain-modal">

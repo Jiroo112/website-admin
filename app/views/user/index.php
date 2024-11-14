@@ -3,7 +3,7 @@
         <div id="dashbord" class="content">
             <div class="head">
                 <?php Flasher::flash(); ?>
-                <h2>Dashboard</h2>
+                <h2>Data Pengguna</h2>
             </div>
         </div>
         <div class="container">
@@ -11,16 +11,16 @@
                 <div class="plus" id="addUser" aria-label="Add User">
                     <i class="bx bxs-plus-circle"></i>
                 </div>
-                <div class="search" id="searching">
-                    <form action="<?= BASEURL; ?>user/cari" method="post"><i class="bx bx-search-alt-2"></i>
+                <form action="<?= BASEURL; ?>user/cari" method="post" class="search-form">
+                    <div class="search" id="searching"><i class="bx bx-search-alt-2"></i>
                         <input
                             class="search-input"
-                            id="searchMenu"
+                            id="searchUser"
                             type="text"
                             name="keyword"
                             placeholder="Search" />
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
             <div class="table-container" id="tableContainer">
                 <table border="1" cellpadding="10" cellspacing="0">
@@ -52,7 +52,7 @@
                                 <td><?= $user['umur']; ?></td>
                                 <td><?= $user['tipe_diet']; ?></td>
                                 <td><?= $user['gender']; ?></td>
-                                <td><a href="<?= BASEURL; ?>user/edit/<?= $user['id_user'] ?>" id="editUser" onclick="event.preventDefault(); openModal();"><i class="bx bx-edit-alt edit-icon" title="Edit" data-id="<?= $user['id_user']; ?>"></i></a>
+                                <td><a href="<?= BASEURL; ?>user/edit/<?= $user['id_user'] ?>" id="editUser" onclick="event.preventDefault(); openModal();"><i class="bx bx-edit-alt editUser-icon" title="Edit" data-id="<?= $user['id_user']; ?>"></i></a>
                                     <a href="<?= BASEURL; ?>user/hapus/<?= $user['id_user'] ?>" onclick="return confirm('yakin?');"><i class="bx bx-trash delete-icon" onclick="" title="Delete"></i></a>
                                 </td>
                             </tr>
