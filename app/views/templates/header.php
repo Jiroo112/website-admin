@@ -50,13 +50,13 @@
               </a>
             </li>
             <li class="navigation-link">
-              <a href="#" onclick="">
+              <a href="<?=BASEURL;?>olahraga" onclick="">
                 <i class="bx bx-run icon"></i>
                 <span class="text nav-text">Daftar Olahraga</span>
               </a>
             </li>
             <li class="navigation-link">
-              <a href="#" onclick="">
+              <a href="<?=BASEURL?>konsultan" onclick="">
                 <i class="bx bx-plus-medical icon"></i>
                 <span class="text nav-text">Data Konsultan</span>
               </a>

@@ -315,6 +315,11 @@ form {
     text-decoration: none; /* Menghapus garis bawah */
 }
 
+#data_konsultan a{
+    color: inherit; /* Menggunakan warna dari elemen induknya */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
 /* Kolom kiri */
 .left-column {
     flex: 1;

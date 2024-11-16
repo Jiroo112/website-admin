@@ -98,4 +98,63 @@ $(function(){
         });
     });
 
+    $('#addKonsultan').on('click', function(){
+        $('.Title-label').html('Tambah data Konsultan');
+        $('.button-groupl[type=submit]').html('Tambah data');
+
+    });
+
+    $('.editKonsultan-icon').on('click', function(){
+        $('.Title-label').html('Ubah data Konsultan');
+        $('#submitMenu').html('Ubah data');
+        $('.modal-panel form').attr('action', 'http://localhost/admin-adek/public/konsultan/ubah');
+
+        const id = $(this).data('id');
+        console.log(id);
+
+        $.ajax({
+            url: 'http://localhost/admin-adek/public/konsultan/edit',
+            data: {id, id},
+            method: 'post',
+            dataType: 'json',
+            success: function(data){
+                $("#id_konsultan").val(data.id_konsultan);
+                $("#nama_lengkap").val(data.nama_lengkap);
+                $("#no_hp").val(data.no_hp);
+                $("#fileName").html(data.gambar);
+                console.log(data);
+            }      
+        });
+    });
+
+    $('#addOlahraga').on('click', function(){
+        $('.Title-label').html('Tambah data Olahraga');
+        $('.button-groupl[type=submit]').html('Tambah data');
+
+    });
+
+    $('.editOlahraga-icon').on('click', function(){
+        $('.Title-label').html('Ubah data Olahraga');
+        $('#submitMenu').html('Ubah data');
+        $('.modal-panel form').attr('action', 'http://localhost/admin-adek/public/olahraga/ubah');
+
+        const id = $(this).data('id');
+        console.log(id);
+
+        $.ajax({
+            url: 'http://localhost/admin-adek/public/olahraga/edit',
+            data: {id, id},
+            method: 'post',
+            dataType: 'json',
+            success: function(data){
+                $("#id_olahraga").val(data.id_olahraga);
+                $("#nama_olahraga").val(data.nama_olahraga);
+                $("#deskripsi").val(data.deskripsi);
+                $("#username").val(data.username);
+                $("#fileName").html(data.gambar);
+                console.log(data);
+            }      
+        });
+    });
+
 });
