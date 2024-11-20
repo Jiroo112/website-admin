@@ -1,7 +1,7 @@
 <?php
 
 class Buku_model{
-    private $table = 'buku';
+    private $table = 'artikel';
     private $db;
 
     public function __construct(){
@@ -14,15 +14,19 @@ class Buku_model{
     }
 
     public function getBukuById($id){
-        $query = "SELECT * FROM buku WHERE id_buku = :id";
+        $query = "SELECT * FROM artikel WHERE id_buku = :id";
 
         $this->db->query($query);
         $this->db->bind('id', $id);
         return $this->db->single();
     }
+    public function getIdBuku(){
+        $this->db->query('SELECT MAX(id_buku) AS id_terbesar FROM artikel');
+        return $this->db->single();
+    }
 
     public function tambahDataBuku($data){
-        $query = "INSERT INTO buku VALUES (:id_buku, :judul, :kategori, :isi_buku, :gambar, :username)";
+        $query = "INSERT INTO artikel VALUES (:id_buku, :judul, :kategori, :isi_buku, :gambar, :username)";
 
         $fileName = $data['gambar']['name'];
         $uploadDirectory = "../app/upload/buku/";
@@ -44,7 +48,7 @@ class Buku_model{
     }
 
     public function hapusDataBuku($id){
-        $query = "DELETE FROM buku WHERE id_buku = :id";
+        $query = "DELETE FROM artikel WHERE id_buku = :id";
 
         $this->db->query($query);
         $this->db->bind('id', $id);
@@ -55,13 +59,13 @@ class Buku_model{
 
     public function ubahDataBuku($data){
 
-        $this->db->query("SELECT gambar FROM buku WHERE id_buku = :id_buku");
+        $this->db->query("SELECT gambar FROM artikel WHERE id_buku = :id_buku");
         $this->db->bind('id_buku', $data['id_buku']);
         $result = $this->db->single(); 
 
         $gambarLama = $result ? $result['gambar'] : null;
 
-        $query = "UPDATE buku SET 
+        $query = "UPDATE artikel SET 
         judul = :judul,
         kategori = :kategori,
         isi_buku = :isi_buku,
@@ -94,7 +98,7 @@ class Buku_model{
     public function cariAllBuku(){
         $keyword = $_POST['keyword'];
 
-        $query = "SELECT * FROM buku WHERE judul LIKE :keyword";
+        $query = "SELECT * FROM artikel WHERE judul LIKE :keyword";
 
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");

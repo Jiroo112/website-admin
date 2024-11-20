@@ -21,6 +21,11 @@ class Konsultan_model{
         return $this->db->single();
     }
 
+    public function getIdKonsultan(){
+        $this->db->query('SELECT MAX(id_konsultan) AS id_terbesar FROM konsultan');
+        return $this->db->single();
+    }
+
     public function tambahDataKonsultan($data){
         $query = "INSERT INTO konsultan VALUES (:id_konsultan, :nama_lengkap, :no_hp, :gambar)";
 

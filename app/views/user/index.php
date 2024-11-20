@@ -8,7 +8,7 @@
         </div>
         <div class="container">
             <div class="search-plus-container" id="searchPlusContainer">
-                <div class="plus" id="addUser" aria-label="Add User">
+                <div class="plus" id="addUser" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>" >
                     <i class="bx bxs-plus-circle"></i>
                 </div>
                 <form action="<?= BASEURL; ?>user/cari" method="post" class="search-form">
@@ -36,11 +36,13 @@
                             <th>Umur</th>
                             <th>Tipe diet</th>
                             <th>Gender</th>
+                            <th>Gambar</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody id="data_user">
                         <?php foreach ($data['user'] as $user): ?>
+                            <?php $imgSrc = '/admin-adek/app/upload/user/' . $user['gambar'] ?>
                             <tr>
                                 <td><?= $user['id_user']; ?></td>
                                 <td><?= $user['nama_lengkap']; ?></td>
@@ -52,6 +54,7 @@
                                 <td><?= $user['umur']; ?></td>
                                 <td><?= $user['tipe_diet']; ?></td>
                                 <td><?= $user['gender']; ?></td>
+                                <td><img src="<?= $imgSrc; ?>" alt="Gambar User" width="75" height="75"></td>
                                 <td><a href="<?= BASEURL; ?>user/edit/<?= $user['id_user'] ?>" id="editUser" onclick="event.preventDefault(); openModal();"><i class="bx bx-edit-alt editUser-icon" title="Edit" data-id="<?= $user['id_user']; ?>"></i></a>
                                     <a href="<?= BASEURL; ?>user/hapus/<?= $user['id_user'] ?>" onclick="return confirm('yakin?');"><i class="bx bx-trash delete-icon" onclick="" title="Delete"></i></a>
                                 </td>
@@ -70,7 +73,7 @@
                         <div class="left-column">
                             <div class="form-group">
                                 <label for="id_user">ID user</label>
-                                <input type="text" id="id_user" name="id_user" required />
+                                <input type="text" id="id_user" name="id_user" required readonly />
                             </div>
                             <div class="form-group">
                                 <label for="nama_user">Nama user</label>
@@ -87,6 +90,15 @@
                             <div class="form-group">
                                 <label for="no_hp">No hp</label>
                                 <input type="number" id="no_hp" name="no_hp" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="resep">Gambar</label>
+                                <div class="file-input">
+                                    <label for="fileUpload" id="chooser" class="choose-file">Choose File</label>
+                                    <input type="file" id="fileUpload" name="gambar" hidden />
+                                    <span id="fileName">No file chosen</span>
+                                    <span id="removeFile" class="remove-file" style="display: none">✖</span>
+                                </div>
                             </div>
                         </div>
 

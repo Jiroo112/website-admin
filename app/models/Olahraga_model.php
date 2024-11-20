@@ -22,6 +22,11 @@ class Olahraga_model{
         return $this->db->single();
     }
 
+    public function getIdOlahraga(){
+        $this->db->query('SELECT MAX(id_olahraga) AS id_terbesar FROM olahraga');
+        return $this->db->single();
+    }
+
     public function tambahDataOlahraga($data){
         $query = "INSERT INTO olahraga VALUES (:id_olahraga, :nama_olahraga, :deskripsi, :jenis_olahraga, :username, :gambar)";
 
@@ -95,7 +100,7 @@ class Olahraga_model{
     public function cariAllMenu(){
         $keyword = $_POST['keyword'];
 
-        $query = "SELECT * FROM menu WHERE nama_menu LIKE :keyword";
+        $query = "SELECT * FROM olahraga WHERE nama_olahraga LIKE :keyword";
 
         $this->db->query($query);
         $this->db->bind('keyword', "%$keyword%");

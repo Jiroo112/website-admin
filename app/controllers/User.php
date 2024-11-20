@@ -4,22 +4,23 @@ class User extends Controller{
     public function index() {
         $data['js'] = 'user.js';
         $data['user'] = $this->model('User_model')->getAllUser();
+        $data['id'] = $this->model('User_model')->getIdUser();
         $this->view('templates/header', $data);
         $this->view('user/index', $data);
         $this->view('templates/footer', $data);
     }
 
     public function tambah(){
-
+        $data = array_merge($_POST, $_FILES);
         
         try{
-            if($this->model('User_model')->tambahDataUser(($_POST))){
+            if($this->model('User_model')->tambahDataUser(($data))){
             Flasher::setFlash('User', 'berhasil ditambahkan', 'success');
             header('Location: '. BASEURL . 'user');
             exit;
         }
         }catch(PDOException $e){
-            Flasher::setFlash('Data', 'gagal ditambahkan' , 'error');
+            Flasher::setFlash('Data', $e , 'error');
             header('Location: '. BASEURL . 'user');
             exit;
         }
@@ -46,8 +47,10 @@ class User extends Controller{
 
     public function ubah(){
 
+        $data = array_merge($_POST, $_FILES);
+
         try{
-            if($this->model('User_model')->ubahDataUser(($_POST))){
+            if($this->model('User_model')->ubahDataUser(($data))){
             Flasher::setFlash('Data', 'berhasil diubah', 'success');
             header('Location: '. BASEURL . 'user');
             exit;
@@ -65,10 +68,12 @@ class User extends Controller{
     }
 
     public function cari(){
+        $data['js'] = 'user.js';
         $data['user'] = $this->model('User_model')->cariAllUser();
+        $data['id'] = $this->model('User_model')->getIdUser();
         $this->view('templates/header', $data);
         $this->view('user/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/footer', $data);
     }
 }
 

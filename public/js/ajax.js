@@ -3,6 +3,22 @@ $(function(){
     $('#addMenu').on('click', function(){
         $('.Title-label').html('Tambah data Menu');
         $('.button-groupl[type=submit]').html('Tambah data');
+        
+        const id = $(this).data('id');
+        console.log(id);
+        let newId;
+
+        if (id) {
+            const prefix = id.substring(0, 3);
+            const number = parseInt(id.substring(3)); 
+            const nextNumber = number + 1;
+            newId = prefix + nextNumber.toString().padStart(2, '0');
+        } else {
+            newId = 'MKN01';
+        }
+
+        $("#id_menu").val(newId);
+        console.log(newId);
     });
 
     $('.editMenu-icon').on('click', function(){
@@ -35,11 +51,27 @@ $(function(){
 
     $('#addUser').on('click', function(){
         $('.Title-label').html('Tambah data User');
-        $('.button-groupl[type=submit]').html('Tambah data');
+        $('.button-groupl[type=submit]').html('Tambah data Pengguna');
+
+        const id = $(this).data('id');
+        console.log(id);
+        let newId;
+
+        if (id) {
+            const prefix = id.substring(0, 3);
+            const number = parseInt(id.substring(3)); 
+            const nextNumber = number + 1;
+            newId = prefix + nextNumber.toString().padStart(2, '0');
+        } else {
+            newId = 'USR01';
+        }
+
+        $("#id_user").val(newId);
+        console.log(newId);
     });
 
     $('.editUser-icon').on('click', function(){
-        $('.Title-label').html('Ubah data Menu');
+        $('.Title-label').html('Ubah data Pengguna');
         $('#submitMenu').html('Ubah data');
         $('.modal-panel form').attr('action', 'http://localhost/admin-adek/public/user/ubah');
 
@@ -62,6 +94,7 @@ $(function(){
                 $("#umur").val(data.umur);
                 $("#tipe_diet").val(data.tipe_diet);
                 $("#gender").val(data.gender);
+                $("#fileName").html(data.gambar);
                 console.log(data);
             }      
         });
@@ -71,6 +104,21 @@ $(function(){
         $('.Title-label').html('Tambah data Buku');
         $('.button-groupl[type=submit]').html('Tambah data');
 
+        const id = $(this).data('id');
+        console.log(id);
+        let newId;
+
+        if (id) {
+            const prefix = id.substring(0, 3);
+            const number = parseInt(id.substring(3)); 
+            const nextNumber = number + 1;
+            newId = prefix + nextNumber.toString().padStart(2, '0');
+        } else {
+            newId = 'BK001';
+        }
+
+        $("#id_buku").val(newId);
+        console.log(newId);
     });
 
     $('.editBuku-icon').on('click', function(){
@@ -102,6 +150,22 @@ $(function(){
         $('.Title-label').html('Tambah data Konsultan');
         $('.button-groupl[type=submit]').html('Tambah data');
 
+        const id = $(this).data('id');
+        console.log(id);
+        let newId;
+
+        if (id) {
+            const prefix = id.substring(0, 3);
+            const number = parseInt(id.substring(3)); 
+            const nextNumber = number + 1;
+            newId = prefix + nextNumber.toString().padStart(2, '0');
+        } else {
+            newId = 'DR001';
+        }
+
+        $("#id_konsultan").val(newId);
+        console.log(newId);
+
     });
 
     $('.editKonsultan-icon').on('click', function(){
@@ -130,6 +194,22 @@ $(function(){
     $('#addOlahraga').on('click', function(){
         $('.Title-label').html('Tambah data Olahraga');
         $('.button-groupl[type=submit]').html('Tambah data');
+
+        const id = $(this).data('id');
+        console.log(id);
+        let newId;
+
+        if (id) {
+            const prefix = id.substring(0, 3);
+            const number = parseInt(id.substring(3)); 
+            const nextNumber = number + 1;
+            newId = prefix + nextNumber.toString().padStart(2, '0');
+        } else {
+            newId = 'OLH01';
+        }
+
+        $("#id_olahraga").val(newId);
+        console.log(newId);
 
     });
 

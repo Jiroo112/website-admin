@@ -21,6 +21,11 @@ class Menu_model{
         return $this->db->single();
     }
 
+    public function getIdMenu(){
+        $this->db->query('SELECT MAX(id_menu) AS id_terbesar FROM menu');
+        return $this->db->single();
+    }
+
     public function tambahDataMenu($data){
         $query = "INSERT INTO menu VALUES (:id_menu, :nama_menu, :kategori, :protein, :karbohidrat, :lemak, :kalori, :resep, :gambar ,:satuan)";
 
@@ -80,7 +85,7 @@ class Menu_model{
     // Handle file upload jika ada file baru
     if(isset($data['gambar']) && $data['gambar']['error'] === 0) {
         $fileName = $data['gambar']['name'];
-        $uploadDirectory = "../app/upload/buku";
+        $uploadDirectory = "../app/upload/menu";
         $filePath = $uploadDirectory . $fileName;
         move_uploaded_file($data['gambar']['tmp_name'], $filePath);
     } else {

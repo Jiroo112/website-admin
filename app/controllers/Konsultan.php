@@ -4,6 +4,7 @@ class Konsultan extends Controller{
     public function index(){
         $data['js'] = 'konsultan.js';
         $data['konsultan'] = $this->model('Konsultan_model')->getAllKonsultan();
+        $data['id'] = $this->model('Konsultan_model')->getIdKonsultan();
         $this->view('templates/header', $data);
         $this->view('konsultan/index', $data);
         $this->view('templates/footer', $data);
@@ -67,9 +68,10 @@ class Konsultan extends Controller{
 
     public function cari(){
         $data['konsultan'] = $this->model('Konsultan_model')->cariAllKonsultan();
+        $data['konsultan'] = $this->model('Konsultan_model')->getIdKonsultan();
         $this->view('templates/header', $data);
         $this->view('konsultan/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/footer', $data);
     }
     
 }

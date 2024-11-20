@@ -5,6 +5,7 @@ class Olahraga extends Controller{
     public function index() {
         $data['js'] = 'olahraga.js';
         $data['olahraga'] = $this->model('Olahraga_model')->getAllOlahraga();
+        $data['id'] = $this->model('Olahraga_model')->getIdOlahraga();
         $this->view('templates/header', $data);
         $this->view('olahraga/index', $data);
         $this->view('templates/footer', $data);
@@ -68,8 +69,9 @@ class Olahraga extends Controller{
 
     public function cari(){
         $data['olahraga'] = $this->model('Olahraga_model')->cariAllOlahraga();
+        $data['id'] = $this->model('Olahraga_model')->getIdOlahraga();
         $this->view('templates/header', $data);
         $this->view('olahraga/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/footer', $data);
     }
 }

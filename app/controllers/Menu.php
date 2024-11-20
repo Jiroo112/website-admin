@@ -5,6 +5,7 @@ class Menu extends Controller{
     public function index() {
         $data['js'] = 'menu.js';
         $data['menu'] = $this->model('Menu_model')->getAllMenu();
+        $data['id'] = $this->model('Menu_model')->getIdMenu();
         $this->view('templates/header', $data);
         $this->view('menu/index', $data);
         $this->view('templates/footer', $data);
@@ -26,7 +27,7 @@ class Menu extends Controller{
             exit;
         }
         }catch(PDOException $e){
-            Flasher::setFlash('Menu', 'gagal ditambahkan', 'error');
+            Flasher::setFlash('Menu', $e , 'error');
             header('Location: '. BASEURL . 'menu');
             exit;
         }
@@ -73,7 +74,9 @@ class Menu extends Controller{
     }
 
     public function cari(){
+        $data['js'] = 'menu.js';
         $data['menu'] = $this->model('Menu_model')->cariAllMenu();
+        $data['id'] = $this->model('Menu_model')->getIdMenu();
         $this->view('templates/header', $data);
         $this->view('menu/index', $data);
         $this->view('templates/footer');

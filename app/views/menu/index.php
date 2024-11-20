@@ -3,15 +3,15 @@
     <div id="dashbord" class="content">
       <div class="head">
         <?php Flasher::flash(); ?>
-        <h2>Buku</h2>
+        <h2>Daftar menu</h2>
       </div>
     </div>
     <div class="container">
       <div class="search-plus-container" id="searchPlusContainer">
-        <div class="plus" id="addMenu" aria-label="Add User">
+        <div class="plus" id="addMenu" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>">
           <i class="bx bxs-plus-circle"></i>
         </div>
-        <form action="<?= BASEURL; ?>buku/cari" method="post" class="search-form">
+        <form action="<?= BASEURL; ?>menu/cari" method="post" class="search-form">
           <div class="search" id="searching"><i class="bx bx-search-alt-2"></i>
             <input
               class="search-input"
@@ -73,7 +73,7 @@
           <div class="left-column">
             <div class="form-group">
               <label for="id_menu">ID Menu</label>
-              <input type="text" id="id_menu" name="id_menu" required />
+              <input type="text" id="id_menu" name="id_menu" required readonly />
             </div>
             <div class="form-group">
               <label for="nama_menu">Nama Menu</label>

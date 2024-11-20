@@ -44,16 +44,46 @@ const fileInput = document.getElementById('fileUpload');
   
   fileInput.addEventListener('change', function () {
     if (fileInput.files.length > 0) {
-      fileNameSpan.textContent = fileInput.files[0].name;
-      removeFileSpan.style.display = 'inline';
-      const file = this.files[0];
-          fileName.textContent = file.name;
-          const previewUrl = URL.createObjectURL(file);
-          fileName.onclick = function() {
-              showPreview(previewUrl);
-          };
+      const file = fileInput.files[0];
+      const fileName = file.name;
+  
+      // Validasi jika file adalah gambar
+      if (!file.type.startsWith('image/')) {
+        alert('Harap unggah file gambar.');
+        fileInput.value = ''; // Reset input file
+        fileNameSpan.textContent = 'No file chosen';
+        removeFileSpan.style.display = 'none';
+        return;
+      }
+  
+      const img = new Image();
+      const previewUrl = URL.createObjectURL(file);
+  
+      img.onload = function () {
+        const width = img.naturalWidth;
+        const height = img.naturalHeight;
+  
+        // Validasi rasio aspek 1:1
+        if (width !== height) {
+          alert('Gambar harus memiliki rasio aspek 1:1.');
+          fileInput.value = ''; // Reset input file
+          fileNameSpan.textContent = 'No file chosen';
+          removeFileSpan.style.display = 'none';
+          return;
+        }
+  
+        // Jika validasi lolos, tampilkan nama file dan opsi pratinjau
+        fileNameSpan.textContent = fileName;
+        removeFileSpan.style.display = 'inline';
+        fileNameSpan.onclick = function () {
+          showPreview(previewUrl);
+        };
+      };
+  
+      img.src = previewUrl; // Load gambar untuk validasi dimensi
     } else {
       fileNameSpan.textContent = 'No file chosen';
+      removeFileSpan.style.display = 'none';
     }
   });
   

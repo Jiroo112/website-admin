@@ -19,8 +19,19 @@ class User_model{
         return $this->db->single();
     }
 
+    public function getIdUser(){
+        $this->db->query('SELECT MAX(id_user) AS id_terbesar FROM data_pengguna');
+        return $this->db->single();
+    }
+
     public function tambahDataUser($data){
-        $query = "INSERT INTO data_pengguna VALUES (:id_user, :nama_lengkap, :email, :password, :no_hp, :berat_badan, :tinggi_badan, :umur, :tipe_diet ,:gender)";
+        $query = "INSERT INTO data_pengguna VALUES (:id_user, :nama_lengkap, :email, :password, :no_hp, :berat_badan, :tinggi_badan, :umur, :tipe_diet ,:gender, :gambar)";
+
+        $fileName = $data['gambar']['name'];
+        $uploadDirectory = "../app/upload/user/";
+        $filePath = $uploadDirectory . $fileName;
+
+        move_uploaded_file($data['gambar']['tmp_name'], $filePath);
 
         $this->db->query($query);
         $this->db->bind('id_user', $data['id_user']);
@@ -33,6 +44,7 @@ class User_model{
         $this->db->bind('umur', $data['umur']);
         $this->db->bind('tipe_diet', $data['tipe_diet']);
         $this->db->bind('gender', $data['gender']);
+        $this->db->bind('gambar', $fileName);
 
         $this->db->execute();
 
@@ -51,6 +63,12 @@ class User_model{
     
     public function ubahDataUser($data){
 
+        $this->db->query("SELECT gambar FROM data_pengguna WHERE id_user = :id_user");
+        $this->db->bind('id_user', $data['id_user']);
+        $result = $this->db->single(); 
+
+        $gambarLama = $result ? $result['gambar'] : null;
+
         $query = "UPDATE data_pengguna SET 
         nama_lengkap = :nama_lengkap,
         email = :email,
@@ -60,8 +78,18 @@ class User_model{
         tinggi_badan = :tinggi_badan,
         umur = :umur,
         tipe_diet = :tipe_diet,
-        gender = :gender
+        gender = :gender,
+        gambar = :gambar
         WHERE id_user = :id_user";
+
+        if(isset($data['gambar']) && $data['gambar']['error'] === 0) {
+            $fileName = $data['gambar']['name'];
+            $uploadDirectory = "../app/upload/user/";
+            $filePath = $uploadDirectory . $fileName;
+            move_uploaded_file($data['gambar']['tmp_name'], $filePath);
+        } else {
+            $fileName = $gambarLama;
+        }
 
     
     $this->db->query($query);
@@ -74,6 +102,7 @@ class User_model{
     $this->db->bind('umur', $data['umur']);
     $this->db->bind('tipe_diet', $data['tipe_diet']);
     $this->db->bind('gender', $data['gender']);
+    $this->db->bind('gambar', $fileName);
     $this->db->bind('id_user', $data['id_user']);
 
     $this->db->execute();

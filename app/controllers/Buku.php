@@ -4,6 +4,7 @@ class Buku extends Controller{
     public function index(){
         $data['js'] = 'buku.js';
         $data['buku'] = $this->model('Buku_model')->getAllBuku();
+        $data['id'] = $this->model('Buku_model')->getIdBuku();
         $this->view('templates/header', $data);
         $this->view('buku/index', $data);
         $this->view('templates/footer', $data);
@@ -65,9 +66,11 @@ class Buku extends Controller{
         }
     }
     public function cari(){
+        $data['js'] = 'buku.js';
         $data['buku'] = $this->model('Buku_model')->cariAllBuku();
+        $data['id'] = $this->model('Buku_model')->getIdBuku();
         $this->view('templates/header', $data);
         $this->view('buku/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/footer', $data);
     }
 }

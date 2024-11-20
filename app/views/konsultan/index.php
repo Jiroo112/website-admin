@@ -8,7 +8,7 @@
         </div>
         <div class="container">
             <div class="search-plus-container" id="searchPlusContainer">
-                <div class="plus" id="addKonsultan" aria-label="Add Konsultan">
+                <div class="plus" id="addKonsultan" aria-label="Add Konsultan" data-id="<?= $data['id']['id_terbesar']; ?>">
                     <i class="bx bxs-plus-circle"></i>
                 </div>
                 <form action="<?= BASEURL; ?>konsultan/cari" method="post" class="search-form">
@@ -59,7 +59,7 @@
                         <div class="left-column">
                             <div class="form-group">
                                 <label for="id_konsultan">ID Konsultan</label>
-                                <input type="text" id="id_konsultan" name="id_konsultan" required />
+                                <input type="text" id="id_konsultan" name="id_konsultan" required readonly />
                             </div>
                             <div class="form-group">
                                 <label for="nama_lengkap">Nama Lengkap</label>
