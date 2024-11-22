@@ -79,7 +79,16 @@ class Menu extends Controller{
         $data['id'] = $this->model('Menu_model')->getIdMenu();
         $this->view('templates/header', $data);
         $this->view('menu/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/footer',$data);
+    }
+
+    public function filter(){
+        $data['js'] = 'menu.js';
+        $data['menu'] = $this->model('Menu_model')->filter();
+        $data['id'] = $this->model('Menu_model')->getIdMenu();
+        $this->view('templates/header', $data);
+        $this->view('menu/index', $data);
+        $this->view('templates/footer', $data);
     }
 }
 

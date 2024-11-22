@@ -8,7 +8,17 @@
         </div>
         <div class="container">
             <div class="search-plus-container" id="searchPlusContainer">
-                <div class="plus" id="addBuku" aria-label="Add Buku" data-id="<?= $data['id']['id_terbesar']; ?>" >
+                <form action="<?= BASEURL; ?>buku/filter" method="post" class="search-form">
+                    <select id="filter" name="filter" onchange="this.form.submit()" required>
+                        <option value="" disabled selected>Pilih kategori</option>
+                        <option value="all">All</option>
+                        <option value="diet">Diet</option>
+                        <option value="olahraga">Olahraga</option>
+                        <option value="makanan">Makanan</option>
+                        <option value="minuman">Minuman</option>
+                    </select>
+                </form>
+                <div class="plus" id="addBuku" aria-label="Add Buku" data-id="<?= $data['id']['id_terbesar']; ?>">
                     <i class="bx bxs-plus-circle"></i>
                 </div>
                 <form action="<?= BASEURL; ?>buku/cari" method="post" class="search-form">
@@ -37,7 +47,7 @@
                     </thead>
                     <tbody id="data_buku">
                         <?php foreach ($data['buku'] as $buku): ?>
-                            <?php $imgSrc = '/admin-adek/app/upload/buku/'. $buku['gambar']?>
+                            <?php $imgSrc = '/admin-adek/app/upload/buku/' . $buku['gambar'] ?>
                             <tr>
                                 <td><?= $buku['id_buku']; ?></td>
                                 <td><?= $buku['judul']; ?></td>

@@ -5,6 +5,10 @@ const modal = document.getElementById('addMenuModal');
 const cancelButton = document.getElementById('cancelMenu');
 const form = document.getElementById('addmenuForm');
 
+document.getElementById('filter').addEventListener('change', function() {
+  this.form.submit();
+});
+
 function openModal() {
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';

@@ -117,4 +117,24 @@ class Menu_model{
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultset();
     }
+
+    public function filter(){
+        $keyword = $_POST['filter'];
+
+    // Jika filter adalah 'all', ambil semua data
+    if ($keyword == "all") {
+        $query = "SELECT * FROM menu";
+    } else {
+        $query = "SELECT * FROM menu WHERE kategori_menu LIKE :filter";
+    }
+
+    $this->db->query($query);
+
+    // Hanya bind jika bukan 'all'
+    if ($keyword != "all") {
+        $this->db->bind('filter', "%$keyword%");
+    }
+
+    return $this->db->resultset();
+    }
 }

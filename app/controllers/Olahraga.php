@@ -74,4 +74,13 @@ class Olahraga extends Controller{
         $this->view('olahraga/index', $data);
         $this->view('templates/footer', $data);
     }
+    
+    public function filter(){
+        $data['js'] = 'olahraga.js';
+        $data['olahraga'] = $this->model('Olahraga_model')->filter();
+        $data['id'] = $this->model('Olahraga_model')->getIdOlahraga();
+        $this->view('templates/header', $data);
+        $this->view('olahraga/index', $data);
+        $this->view('templates/footer', $data);
+    }
 }

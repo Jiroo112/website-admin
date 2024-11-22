@@ -3,6 +3,11 @@ const modal = document.getElementById('addBukuModal');
 const cancelButton = document.getElementById('cancelBuku');
 const form = document.getElementById('addbukuForm');
 
+document.getElementById('filter').addEventListener('change', function() {
+  this.form.submit();
+});
+
+
 function openModal() {
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';

@@ -8,6 +8,15 @@
         </div>
         <div class="container">
             <div class="search-plus-container" id="searchPlusContainer">
+                <form action="<?= BASEURL; ?>olahraga/filter" method="post" class="search-form">
+                    <select id="filter" name="filter" onchange="this.form.submit()" required>
+                        <option value="" disabled selected>Pilih kategori</option>
+                        <option value="all">All</option>
+                        <option value="kekuatan">Kekuatan</option>
+                        <option value="kardio">Kardio</option>
+                        <option value="interval">Interval</option>
+                    </select>
+                </form>
                 <div class="plus" id="addOlahraga" aria-label="Add Olahraga" data-id="<?= $data['id']['id_terbesar']; ?>">
                     <i class="bx bxs-plus-circle"></i>
                 </div>

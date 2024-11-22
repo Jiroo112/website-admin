@@ -190,7 +190,7 @@ header .imagetext .header-text{
 
 .search-plus-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content:flex-end;
     align-items: center;
     margin-bottom: 30px;
 }
@@ -508,3 +508,12 @@ textarea {
     opacity: 0;
     transform: translateY(20px);
 }
+
+#filter {
+    max-width:100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+  }

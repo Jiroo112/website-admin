@@ -5,6 +5,10 @@ const modal = document.getElementById('addOlahragaModal');
 const cancelButton = document.getElementById('cancelOlahraga');
 const form = document.getElementById('addolahragaForm');
 
+document.getElementById('filter').addEventListener('change', function() {
+  this.form.submit();
+});
+
 function openModal() {
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';

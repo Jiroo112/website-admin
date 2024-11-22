@@ -73,4 +73,13 @@ class Buku extends Controller{
         $this->view('buku/index', $data);
         $this->view('templates/footer', $data);
     }
+
+    public function filter(){
+        $data['js'] = 'buku.js';
+        $data['buku'] = $this->model('Buku_model')->filter();
+        $data['id'] = $this->model('Buku_model')->getIdBuku();
+        $this->view('templates/header', $data);
+        $this->view('buku/index', $data);
+        $this->view('templates/footer', $data);
+    }
 }
