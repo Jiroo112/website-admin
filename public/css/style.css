@@ -190,9 +190,89 @@ header .imagetext .header-text{
 
 .search-plus-container {
     display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.search-plus-container-kanan {
+    display: flex;
     justify-content:flex-end;
     align-items: center;
     margin-bottom: 30px;
+    width: 100%;
+}
+filter-container {
+    flex: 0 0 auto;
+}
+
+#filter {
+    padding: 10px 20px;
+    background: #f6f6f6;
+    border: 1px solid #ddd;
+    outline: none;
+    min-width: 200px;
+}
+
+/* Right side - Add and Search */
+.right-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.plus {
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 28px;
+    background: #f6f6f6;
+}
+
+.search-input {
+    border: none;
+    background: none;
+    outline: none;
+    padding-left: 10px;
+    width: 200px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .search-plus-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-container {
+        width: 100%;
+    }
+
+    #filter {
+        width: 100%;
+    }
+
+    .right-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search {
+        flex: 1;
+        margin-left: 15px;
+    }
 }
 
 .plus {
@@ -231,6 +311,7 @@ header .imagetext .header-text{
 .search-form{
     margin: 0px;
     padding: 0px;
+
 }
 
 table {
@@ -517,3 +598,205 @@ textarea {
     justify-content: flex-start;
     
   }
+
+/* Header */
+.header-container {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    gap: 50px;
+    background-color: #ace8e1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    width: 100%;
+    max-width: 1365px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
+  
+  .header-img {
+    width: auto; /* Menjaga lebar gambar sesuai dengan aslinya */
+    height: 300px; /* Atur tinggi gambar sesuai yang diinginkan */
+    object-fit: contain; /* Menjaga gambar tetap terpotong dengan proporsinya */
+    border-radius: 10px; /* Radius border untuk sudut yang melengkung */
+    margin-top: -68px;
+    position: relative;
+  }
+  
+  .header-text h1 {
+    position: absolute;
+    font-size: 35px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 5px;
+    margin-right: 20px;
+  }
+  
+  .header-text p {
+    position: absolute;
+    font-size: 21px;
+    font-family: Poppins;
+    color: #7a7a7a;
+    margin: 0;
+    margin-right: 20px;
+    margin-top: 50px;
+  }
+  
+  /* Dashboard Stats */
+  .dashboard-stats {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 66px;
+    margin-bottom: 70px;
+    margin-top: 250px;
+  }
+  
+  .stat {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    height: 80px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+  }
+  
+  p {
+    display: flex;
+    flex-direction: column; /* Menyusun konten secara vertikal */
+    align-items: flex-start; /* Menyelaraskan konten ke tengah secara horizontal */
+    margin: 10px 0; /* Memberikan jarak antar paragraf */
+  }
+  
+  .total-number {
+    font-size: 24px; /* Ukuran font lebih besar untuk angka */
+    font-weight: bold; /* Memberikan penekanan pada angka */
+    color: #333; /* Warna angka */
+  }
+  
+  .total-label {
+    font-size: 20px; /* Ukuran font lebih kecil untuk label */
+    color: #333; /* Warna label */
+    opacity: 70%;
+  }
+  
+  .stat:nth-child(2) {
+    background-color: #d8f8a4;
+  }
+  
+  .stat:nth-child(3) {
+    background-color: #99f692;
+  }
+  
+  .stat:nth-child(4) {
+    background-color: #73e7b8;
+  }
+  
+  .stat:nth-child(5) {
+    background-color: #ace8e1;
+  }
+  
+  /* Artikel */
+  .article-container {
+    max-width: 1365px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 360px;
+    position: absolute;
+    padding: 20px;
+    padding-right: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article .text-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolom untuk menyusun h2 dan span secara vertikal */
+    row-gap: 10px; /* Jarak antara h2 dan span */
+  }
+  
+  .article h2 {
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: #000000;
+    margin: 0; /* Menghapus margin */
+  }
+  
+  .article span {
+    font-size: 15px;
+    font-family: Poppins;
+    color: #000000;
+    margin: 0; /* Menghapus margin */
+  }
+  
+  .kategori {
+    display: block; /* Mengubah span menjadi block sehingga berada di bawah h2 */
+    margin-top: 45px; /* Memberi jarak antara h2 dan span */
+    color: gray; /* (Opsional) Memberi warna kategori */
+    display: inline-block;
+  }
+  
+  .article {
+    width: 1323px;
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .article img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+  
+  .article-details {
+    flex-grow: 1;
+  }
+  
+  .article-details h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .article-details span {
+    font-size: 16px;
+    color: #777;
+    margin-top: 5px;
+    display: block;
+  }
+
+  @media (max-width: 1366px){
+    html {
+        font-size: 70%;
+    }
+  }
+
+  @media (max-width: 768px){
+    html {
+        font-size: 62.5%;
+    }
+  }
+
+  @media (max-width: 450px){
+    html {
+        font-size: 55%;
+    }
+  }
+
+  

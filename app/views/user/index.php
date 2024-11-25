@@ -7,21 +7,27 @@
             </div>
         </div>
         <div class="container">
-            <div class="search-plus-container" id="searchPlusContainer">
-                <div class="plus" id="addUser" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>" >
-                    <i class="bx bxs-plus-circle"></i>
-                </div>
-                <form action="<?= BASEURL; ?>user/cari" method="post" class="search-form">
-                    <div class="search" id="searching"><i class="bx bx-search-alt-2"></i>
-                        <input
-                            class="search-input"
-                            id="searchUser"
-                            type="text"
-                            name="keyword"
-                            placeholder="Search" />
-                    </div>
-                </form>
+    <div class="search-plus-container-kanan" id="searchPlusContainer">
+        <div class="right-controls">
+            <div class="plus" id="addUser" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>">
+                <i class="bx bxs-plus-circle"></i>
             </div>
+            <form action="<?= BASEURL; ?>user/cari" method="post" class="search-form">
+                <div class="search" id="searching">
+                    <i class="bx bx-search-alt-2"></i>
+                    <input
+                        class="search-input"
+                        id="searchUser"
+                        type="text"
+                        name="keyword"
+                        placeholder="Search"
+                    />
+                </div>
+            </form>
+        </div>
+    </div>
+        
+        
             <div class="table-container" id="tableContainer">
                 <table border="1" cellpadding="10" cellspacing="0">
                     <thead>

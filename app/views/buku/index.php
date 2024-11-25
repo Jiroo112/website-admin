@@ -8,6 +8,7 @@
         </div>
         <div class="container">
             <div class="search-plus-container" id="searchPlusContainer">
+            <div class="filter-container">
                 <form action="<?= BASEURL; ?>buku/filter" method="post" class="search-form">
                     <select id="filter" name="filter" onchange="this.form.submit()" required>
                         <option value="" disabled selected>Pilih kategori</option>
@@ -18,6 +19,8 @@
                         <option value="minuman">Minuman</option>
                     </select>
                 </form>
+            </div>
+            <div class="right-controls">
                 <div class="plus" id="addBuku" aria-label="Add Buku" data-id="<?= $data['id']['id_terbesar']; ?>">
                     <i class="bx bxs-plus-circle"></i>
                 </div>
@@ -31,6 +34,7 @@
                             placeholder="Search" />
                     </div>
                 </form>
+            </div>
             </div>
             <div class="table-container" id="tableContainer">
                 <table border="1" cellpadding="10" cellspacing="0">

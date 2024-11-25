@@ -7,7 +7,8 @@
             </div>
         </div>
         <div class="container">
-            <div class="search-plus-container" id="searchPlusContainer">
+            <div class="search-plus-container-kanan" id="searchPlusContainer">
+            <div class="right-controls">
                 <div class="plus" id="addKonsultan" aria-label="Add Konsultan" data-id="<?= $data['id']['id_terbesar']; ?>">
                     <i class="bx bxs-plus-circle"></i>
                 </div>
@@ -19,8 +20,9 @@
                             type="text"
                             name="keyword"
                             placeholder="Search" />
-                    </div>
-                </form>
+                            </div>
+                     </form>
+                </div>
             </div>
             <div class="table-container" id="tableContainer">
                 <table border="1" cellpadding="10" cellspacing="0">

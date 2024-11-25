@@ -6,32 +6,40 @@
         <h2>Daftar menu</h2>
       </div>
     </div>
-    <div class="container" >
-      <div class="search-plus-container" id="searchPlusContainer">
-      <form action="<?= BASEURL; ?>menu/filter" method="post" class="search-form">
-        <select id="filter" name="filter" onchange="this.form.submit()" required>
-        <option value="" disabled selected>Pilih kategori</option>
-          <option value="all">All</option>
-          <option value="makanan_berat">Makanan Berat</option>
-          <option value="desert">Desert</option>
-          <option value="minuman_sehat">Minuman</option>
-        </select>
-      </form>
-        <div class="plus" id="addMenu" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>">
-          <i class="bx bxs-plus-circle"></i>
+    <div class="container">
+    <div class="search-plus-container" id="searchPlusContainer">
+        <!-- Left side - Category filter -->
+        <div class="filter-container">
+            <form action="<?= BASEURL; ?>menu/filter" method="post" class="search-form">
+                <select id="filter" name="filter" onchange="this.form.submit()" required>
+                    <option value="" disabled selected>Pilih kategori</option>
+                    <option value="all">All</option>
+                    <option value="makanan_berat">Makanan Berat</option>
+                    <option value="desert">Desert</option>
+                    <option value="minuman_sehat">Minuman</option>
+                </select>
+            </form>
         </div>
-        <form action="<?= BASEURL; ?>menu/cari" method="post" class="search-form">
-          <div class="search" id="searching"><i class="bx bx-search-alt-2"></i>
-            <input
-              class="search-input"
-              id="searchMenu"
-              type="text"
-              name="keyword"
-              placeholder="Search" />
-          
-        </form>
+
+        <!-- Right side - Add and Search -->
+        <div class="right-controls">
+            <div class="plus" id="addMenu" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>">
+                <i class="bx bxs-plus-circle"></i>
+            </div>
+            <form action="<?= BASEURL; ?>menu/cari" method="post" class="search-form">
+                <div class="search" id="searching">
+                    <i class="bx bx-search-alt-2"></i>
+                    <input
+                        class="search-input"
+                        id="searchMenu"
+                        type="text"
+                        name="keyword"
+                        placeholder="Search"
+                    />
+                </div>
+            </form>
         </div>
-      </div>
+    </div>
       <div class="table-container" id="tableMenu">
         <table border="1" cellpadding="10" cellspacing="0">
           <thead>
