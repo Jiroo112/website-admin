@@ -6,6 +6,24 @@
                 <h2>Daftar olahraga</h2>
             </div>
         </div>
+        <div class="header-container">
+            <div class="header-text">        
+            <h1>
+            <?php 
+            // Memeriksa apakah email tersedia di session
+            if (isset($email) && !empty($email)) {
+            // Jika email ada, tampilkan
+                echo "Halo, " . htmlspecialchars($email);
+            } else {
+            // Jika email tidak ada (belum login), tampilkan pesan
+                echo "Anda belum login.";
+            }
+            ?>
+            </h1>
+            <p>Selamat bekerja, semoga harimu menyenangkan!</p>
+            </div>
+            <img class="header-img" src="<?=BASEURL;?>/img/gambar.png" alt="Header Image" />
+        </div>
         <div class="container">
             <div class="search-plus-container" id="searchPlusContainer">
             <div class="filter-container">
@@ -70,7 +88,7 @@
         </div>
         <div id="addOlahragaModal" class="modal-panel">
             <div class="contain-modal">
-                <form action="<?= BASEURL; ?>olahraga/tambah" method="post" id="addolahragaForm" enctype="multipart/form-data">
+                <form action="<?= BASEURL; ?>olahraga/updateprofile" method="post" id="addolahragaForm" enctype="multipart/form-data">
                     <h2 class="Title-label">Tambah Data Olaharaga</h2>
                     <div class="form-container">
                         <!-- Kolom Kiri -->

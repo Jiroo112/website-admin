@@ -23,7 +23,7 @@
             </h1>
             <p>Selamat bekerja, semoga harimu menyenangkan!</p>
             </div>
-            <img class="header-img" src="../app/upload/gambar.png" alt="Header Image">
+            <img class="header-img" src="<?=BASEURL;?>/img/gambar.png" alt="Header Image" />
         </div>
 
 <!-- Menampilkan data total -->

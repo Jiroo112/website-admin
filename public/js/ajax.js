@@ -237,4 +237,40 @@ $(function(){
         });
     });
 
+    $.ajax({
+        url: 'http://localhost/admin-adek/public/Landingpage/getHeroData', // Endpoint backend
+        method: 'get',
+        dataType: 'json',
+        success: function(data){
+            console.log(data);
+            $('#hero_tittle').val(data[0].hero_tittle);
+            $('#hero_cta').val(data[0].hero_cta);
+            $("#fileName").html(data[0].hero_image);
+            $('#about_title').val(data[0].about_title);
+            $("#fileAbout").html(data[0].about_image);
+            $('#about_description').val(data[0].about_description);
+            $('#android_download').val(data[0].android_download);
+            $('#ios_download').val(data[0].ios_download);
+        }
+    });
+
+    $.ajax({
+        url: 'http://localhost/admin-adek/public/Landingpage/getFitur', // Endpoint backend
+        method: 'get',
+        dataType: 'json',
+        success: function(data){
+            console.log(data);
+            $('#fitur_title').val(data[0].hero_tittle);
+            $('#fitur_cta').val(data[0].hero_cta);
+            $('#fileHeroimg').html(data[0].hero_image);
+            $('#filesubhero1_img').html(data[0].subhero1_img);
+            $('#filesubhero2_img').html(data[0].subhero2_img);
+            $('#filesubhero3_img').html(data[0].subhero3_img);
+            $('#filesubhero4_img').html(data[0].subhero4_img);
+            $('#desc_subhero1').val(data[0].desc_subhero1);
+            $('#desc_subhero2').val(data[0].desc_subhero2);
+            $('#desc_subhero3').val(data[0].desc_subhero3);
+            $('#desc_subhero4').val(data[0].desc_subhero4);
+        }
+    });
 });

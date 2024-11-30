@@ -61,6 +61,18 @@
                 <span class="text nav-text">Data Konsultan</span>
               </a>
             </li>
+            <li class="navigation-link">
+              <a href="<?=BASEURL?>Landingpage" onclick="">
+              <i class='bx bxs-message-alt-edit bx-flip-horizontal icon' ></i>
+                <span class="text nav-text">Edit Landing</span>
+              </a>
+            </li>
+            <li class="navigation-link">
+              <a href="<?=BASEURL?>profil" onclick="">
+                <i class="bx bx-plus-medical icon"></i>
+                <span class="text nav-text">Edit Profil</span>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="bottom-content">

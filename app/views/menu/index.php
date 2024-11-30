@@ -6,6 +6,24 @@
         <h2>Daftar menu</h2>
       </div>
     </div>
+    <div class="header-container">
+            <div class="header-text">        
+            <h1>
+            <?php 
+            // Memeriksa apakah email tersedia di session
+            if (isset($email) && !empty($email)) {
+            // Jika email ada, tampilkan
+                echo "Halo, " . htmlspecialchars($email);
+            } else {
+            // Jika email tidak ada (belum login), tampilkan pesan
+                echo "Anda belum login.";
+            }
+            ?>
+            </h1>
+            <p>Selamat bekerja, semoga harimu menyenangkan!</p>
+            </div>
+            <img class="header-img" src="<?=BASEURL;?>/img/gambar.png" alt="Header Image" />
+        </div>
     <div class="container">
     <div class="search-plus-container" id="searchPlusContainer">
         <!-- Left side - Category filter -->
