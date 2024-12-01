@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../img/top-view-table-full-delicious-food-composition.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper-register {
+    width: 420px;
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper-register h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper-register .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-register .form-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.wrapper-register .form-group input,
+.wrapper-register .form-group select {
+    height: 40px;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+.wrapper-register .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.wrapper-register .form-group .file-input {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper-register .form-group .file-input label {
+    background-color: white;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.wrapper-register .form-group .file-input span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.wrapper-register .form-group .file-input span.remove-file {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+.wrapper-register .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.wrapper-register .button-group .button {
+    width: 48%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper-register .button-group .button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.wrapper-register {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 30px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper-register h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-step {
+    display: none;
+    flex-direction: column;
+}
+
+.form-step.active {
+    display: flex;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    width: 48%;
+    height: 40px;
+    background: #fff;
+    border-radius: 20px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.button-prev {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.button-next {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#submitBtn {
+    background: #fff;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper-register .login{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 50px 0 15px;
+}
+
+.login p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login p a:hover{
+    text-decoration: underline;
+}
+
+input.error {
+    border: 2px solid red;
+}
+
+.flash-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-size: 12px;
+}
+
+.flash-message.success {
+    background-color: #ffffff;
+    color: var(--text-color);
+    border: 1px solid #87ffa3;
+}
+
+.flash-message.success .icon::before {
+    content: "✅    "; 
+}
+
+.flash-message.success .loading-bar {
+    background-color: #87ffa3; /* Green color for success */
+}
+
+.flash-message.error {
+    background-color: #ffffff;
+    color: var(--text-color);
+    border: 1px solid #ff5364;
+}
+
+.flash-message.error .icon::before {
+    content: "❌    "; 
+    color: #dc3545;
+}
+
+.flash-message.error .loading-bar {
+    background-color: #ff5364; /* Red color for error */
+}
+
+.flash-message .loading-bar {
+    width: 0;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: loading 5s linear forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+.flash-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.flash-message.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
