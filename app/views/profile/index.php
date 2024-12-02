@@ -2,7 +2,7 @@
     <div class="text">
         <div id="dashbord" class="content">
             <div class="head">
-                <?php Flasher::flash();?>
+                <?php Flasher::flash(); ?>
                 <h2>Edit Profil</h2>
             </div>
         </div>
@@ -36,10 +36,10 @@
                 <?php endforeach; ?>
             </form>
             <div class="button-group">
-                        <button type="submit" class="button button-simpan" id="submitProfile">
-                            Simpan
-                        </button>
-                    </div>
+                <button type="submit" class="button button-simpan" id="submitProfile">
+                    Simpan
+                </button>
+            </div>
         </div>
     </div>
 </section>

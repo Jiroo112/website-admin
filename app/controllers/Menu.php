@@ -3,6 +3,7 @@
 class Menu extends Controller{
 
     public function index() {
+        $data['nama'] = $_SESSION['nama'];
         $data['js'] = 'menu.js';
         $data['menu'] = $this->model('Menu_model')->getAllMenu();
         $data['id'] = $this->model('Menu_model')->getIdMenu();

@@ -3,6 +3,7 @@
 class Buku extends Controller{
     public function index(){
         $data['js'] = 'buku.js';
+        $data['nama'] = $_SESSION['nama'];
         $data['buku'] = $this->model('Buku_model')->getAllBuku();
         $data['id'] = $this->model('Buku_model')->getIdBuku();
         $this->view('templates/header', $data);

@@ -2,6 +2,7 @@
 
 class Home extends Controller {
     public function index() {
+        $data['nama'] = $_SESSION['nama'];
         $data['menu'] = $this->model('DashboardModel')->getTotalMenu();
         $data['pengguna'] = $this->model('DashboardModel')->getTotalPengguna();
         $data['artikel'] = $this->model('DashboardModel')->getTotalArtikel();

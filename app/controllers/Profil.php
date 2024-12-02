@@ -1,6 +1,7 @@
 <?php
 class profil extends Controller{
     public function index() {
+        $data['nama'] = $_SESSION['nama'];
         $data['js'] = 'profil.js';
         $data['user'] = $this->model('Profil_model')->getAllUser();
         $this->view('templates/header', $data);

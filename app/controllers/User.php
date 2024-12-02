@@ -2,6 +2,7 @@
 
 class User extends Controller{
     public function index() {
+        $data['nama'] = $_SESSION['nama'];
         $data['js'] = 'user.js';
         $data['user'] = $this->model('User_model')->getAllUser();
         $data['id'] = $this->model('User_model')->getIdUser();

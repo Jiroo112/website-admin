@@ -4,6 +4,8 @@ class Olahraga extends Controller{
 
     public function index() {
         $data['js'] = 'olahraga.js';
+        $data['nama'] = $_SESSION['nama'];
+        $data['username'] = $_SESSION['username'];
         $data['olahraga'] = $this->model('Olahraga_model')->getAllOlahraga();
         $data['id'] = $this->model('Olahraga_model')->getIdOlahraga();
         $this->view('templates/header', $data);

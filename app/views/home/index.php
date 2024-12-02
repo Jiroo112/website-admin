@@ -12,9 +12,9 @@
             <h1>
             <?php 
             // Memeriksa apakah email tersedia di session
-            if (isset($email) && !empty($email)) {
+            if (isset($data['nama']) && !empty($data['nama'])) {
             // Jika email ada, tampilkan
-                echo "Halo, " . htmlspecialchars($email);
+                echo "Halo, " . htmlspecialchars($data['nama']);
             } else {
             // Jika email tidak ada (belum login), tampilkan pesan
                 echo "Anda belum login.";

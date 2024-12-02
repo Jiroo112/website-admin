@@ -3,6 +3,7 @@
 class Konsultan extends Controller{
     public function index(){
         $data['js'] = 'konsultan.js';
+        $data['nama'] = $_SESSION['nama'];
         $data['konsultan'] = $this->model('Konsultan_model')->getAllKonsultan();
         $data['id'] = $this->model('Konsultan_model')->getIdKonsultan();
         $this->view('templates/header', $data);

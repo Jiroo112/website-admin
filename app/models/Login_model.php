@@ -9,8 +9,9 @@ class Login_model{
     }
 
     public function login($data) {
+        session_start();
 
-        $this->db->query('SELECT email, password FROM admin');
+        $this->db->query('SELECT * FROM admin');
         $admin = $this->db->resultset();
     
 
@@ -20,6 +21,9 @@ class Login_model{
         foreach ($admin as $admin1) { 
             if (!empty($admin1['email']) && !empty($admin1['password'])) {
                 if ($admin1['email'] === $data['email'] && $data['password']=== $admin1['password']) {
+                    $_SESSION['nama'] = $admin1['nama']; 
+                    $_SESSION['email'] = $admin1['email'];
+                    $_SESSION['username'] = $admin1['username'];
                     Flasher::setFlash('Login', 'berhasil', 'success');
                     header('Location: ' . BASEURL . 'home');
                     exit;
@@ -27,10 +31,8 @@ class Login_model{
             }
         }
     
-        // Jika tidak ditemukan sebagai admin, periksa sebagai user biasa
         foreach ($datauser as $user) {
             if (!empty($user['email']) && !empty($user['password'])) {
-                // Verifikasi password user dengan password yang di-hash
                 if ($user['email'] === $data['email'] && password_verify($data['password'], $user['password'])) {
                     Flasher::setFlash('Login', 'berhasil', 'success');
                     header('Location: ' . BASEURL . 'starup');
@@ -39,7 +41,6 @@ class Login_model{
             }
         }
     
-        // Jika tidak ditemukan email atau password yang sesuai
         Flasher::setFlash('Login Gagal', 'Email atau password salah', 'error');
         header('Location: ' . BASEURL . 'login');
         exit;

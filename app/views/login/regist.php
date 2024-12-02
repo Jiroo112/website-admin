@@ -7,8 +7,8 @@
         <!-- Step 1 -->
         <div class="form-step active">
             <div class="form-group">
-                <label for="id_user" style="display :none">ID User</label>
-                <input type="text" id="id_user" name="id_user" required />
+                <label for="id_user">Username</label>
+                <input type="text" id="id_user" name="id_user" placeholder="5 character" required />
             </div>
             <div class="form-group">
                 <label for="nama_user">Nama User</label>

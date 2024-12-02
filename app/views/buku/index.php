@@ -7,52 +7,52 @@
             </div>
         </div>
         <div class="header-container">
-            <div class="header-text">        
-            <h1>
-            <?php 
-            // Memeriksa apakah email tersedia di session
-            if (isset($email) && !empty($email)) {
-            // Jika email ada, tampilkan
-                echo "Halo, " . htmlspecialchars($email);
-            } else {
-            // Jika email tidak ada (belum login), tampilkan pesan
-                echo "Anda belum login.";
-            }
-            ?>
-            </h1>
-            <p>Selamat bekerja, semoga harimu menyenangkan!</p>
+            <div class="header-text">
+                <h1>
+                    <?php
+                    // Memeriksa apakah email tersedia di session
+                    if (isset($data['nama']) && !empty($data['nama'])) {
+                        // Jika email ada, tampilkan
+                        echo "Halo, " . htmlspecialchars($data['nama']);
+                    } else {
+                        // Jika email tidak ada (belum login), tampilkan pesan
+                        echo "Anda belum login.";
+                    }
+                    ?>
+                </h1>
+                <p>Selamat bekerja, semoga harimu menyenangkan!</p>
             </div>
-            <img class="header-img" src="<?=BASEURL;?>/img/gambar.png" alt="Header Image" />
+            <img class="header-img" src="<?= BASEURL; ?>/img/gambar.png" alt="Header Image" />
         </div>
         <div class="container">
             <div class="search-plus-container" id="searchPlusContainer">
-            <div class="filter-container">
-                <form action="<?= BASEURL; ?>buku/filter" method="post" class="search-form">
-                    <select id="filter" name="filter" onchange="this.form.submit()" required>
-                        <option value="" disabled selected>Pilih kategori</option>
-                        <option value="all">All</option>
-                        <option value="diet">Diet</option>
-                        <option value="olahraga">Olahraga</option>
-                        <option value="makanan">Makanan</option>
-                        <option value="minuman">Minuman</option>
-                    </select>
-                </form>
-            </div>
-            <div class="right-controls">
-                <div class="plus" id="addBuku" aria-label="Add Buku" data-id="<?= $data['id']['id_terbesar']; ?>">
-                    <i class="bx bxs-plus-circle"></i>
+                <div class="filter-container">
+                    <form action="<?= BASEURL; ?>buku/filter" method="post" class="search-form">
+                        <select id="filter" name="filter" onchange="this.form.submit()" required>
+                            <option value="" disabled selected>Pilih kategori</option>
+                            <option value="all">All</option>
+                            <option value="diet">Diet</option>
+                            <option value="olahraga">Olahraga</option>
+                            <option value="makanan">Makanan</option>
+                            <option value="minuman">Minuman</option>
+                        </select>
+                    </form>
                 </div>
-                <form action="<?= BASEURL; ?>buku/cari" method="post" class="search-form">
-                    <div class="search" id="searching"><i class="bx bx-search-alt-2"></i>
-                        <input
-                            class="search-input"
-                            id="searchBuku"
-                            type="text"
-                            name="keyword"
-                            placeholder="Search" />
+                <div class="right-controls">
+                    <div class="plus" id="addBuku" aria-label="Add Buku" data-id="<?= $data['id']['id_terbesar']; ?>">
+                        <i class="bx bxs-plus-circle"></i>
                     </div>
-                </form>
-            </div>
+                    <form action="<?= BASEURL; ?>buku/cari" method="post" class="search-form">
+                        <div class="search" id="searching"><i class="bx bx-search-alt-2"></i>
+                            <input
+                                class="search-input"
+                                id="searchBuku"
+                                type="text"
+                                name="keyword"
+                                placeholder="Search" />
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="table-container" id="tableContainer">
                 <table border="1" cellpadding="10" cellspacing="0">

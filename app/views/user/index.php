@@ -7,45 +7,44 @@
             </div>
         </div>
         <div class="header-container">
-            <div class="header-text">        
-            <h1>
-            <?php 
-            // Memeriksa apakah email tersedia di session
-            if (isset($email) && !empty($email)) {
-            // Jika email ada, tampilkan
-                echo "Halo, " . htmlspecialchars($email);
-            } else {
-            // Jika email tidak ada (belum login), tampilkan pesan
-                echo "Anda belum login.";
-            }
-            ?>
-            </h1>
-            <p>Selamat bekerja, semoga harimu menyenangkan!</p>
+            <div class="header-text">
+                <h1>
+                    <?php
+                    // Memeriksa apakah email tersedia di session
+                    if (isset($data['nama']) && !empty($data['nama'])) {
+                        // Jika email ada, tampilkan
+                        echo "Halo, " . htmlspecialchars($data['nama']);
+                    } else {
+                        // Jika email tidak ada (belum login), tampilkan pesan
+                        echo "Anda belum login.";
+                    }
+                    ?>
+                </h1>
+                <p>Selamat bekerja, semoga harimu menyenangkan!</p>
             </div>
-            <img class="header-img" src="<?=BASEURL;?>/img/gambar.png" alt="Header Image" />
+            <img class="header-img" src="<?= BASEURL; ?>/img/gambar.png" alt="Header Image" />
         </div>
         <div class="container">
-    <div class="search-plus-container-kanan" id="searchPlusContainer">
-        <div class="right-controls">
-            <div class="plus" id="addUser" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>">
-                <i class="bx bxs-plus-circle"></i>
-            </div>
-            <form action="<?= BASEURL; ?>user/cari" method="post" class="search-form">
-                <div class="search" id="searching">
-                    <i class="bx bx-search-alt-2"></i>
-                    <input
-                        class="search-input"
-                        id="searchUser"
-                        type="text"
-                        name="keyword"
-                        placeholder="Search"
-                    />
+            <div class="search-plus-container-kanan" id="searchPlusContainer">
+                <div class="right-controls">
+                    <div class="plus" id="addUser" aria-label="Add User" data-id="<?= $data['id']['id_terbesar']; ?>">
+                        <i class="bx bxs-plus-circle"></i>
+                    </div>
+                    <form action="<?= BASEURL; ?>user/cari" method="post" class="search-form">
+                        <div class="search" id="searching">
+                            <i class="bx bx-search-alt-2"></i>
+                            <input
+                                class="search-input"
+                                id="searchUser"
+                                type="text"
+                                name="keyword"
+                                placeholder="Search" />
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-    </div>
-        
-        
+            </div>
+
+
             <div class="table-container" id="tableContainer">
                 <table border="1" cellpadding="10" cellspacing="0">
                     <thead>
