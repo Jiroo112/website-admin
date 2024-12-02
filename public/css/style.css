@@ -188,6 +188,15 @@ header .imagetext .header-text{
     overflow-x: auto;
 }
 
+.container-profile {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
 .search-plus-container {
     display: flex;
     justify-content:space-between;
@@ -465,7 +474,7 @@ textarea {
 .button-simpan {
     background-color: var(--primary-color);
     color: white;
-   margin: 0 auto;
+    margin-left: auto;
    justify-content: flex-end;
     display: flex;
 }
@@ -916,7 +925,6 @@ textarea {
 .landing-form label,
 .profil-form label {
     display: block;
-    margin-top: 15px;
     font-weight: 600;
     color: #333;
     font-size: 1rem;

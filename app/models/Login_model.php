@@ -9,19 +9,17 @@ class Login_model{
     }
 
     public function login($data) {
-        // Ambil data admin dari database
+
         $this->db->query('SELECT email, password FROM admin');
         $admin = $this->db->resultset();
     
-        // Ambil data pengguna dari database
+
         $this->db->query('SELECT email, password FROM data_pengguna');
         $datauser = $this->db->resultset();
         
-        // Periksa login untuk admin dan user
         foreach ($admin as $admin1) { 
             if (!empty($admin1['email']) && !empty($admin1['password'])) {
-                // Jika email dan password admin cocok
-                if ($admin1['email'] === $data['email'] && password_verify($data['password'], $admin1['password'])) {
+                if ($admin1['email'] === $data['email'] && $data['password']=== $admin1['password']) {
                     Flasher::setFlash('Login', 'berhasil', 'success');
                     header('Location: ' . BASEURL . 'home');
                     exit;

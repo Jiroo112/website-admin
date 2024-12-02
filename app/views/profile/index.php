@@ -1,31 +1,12 @@
 <section class="home">
     <div class="text">
-
         <div id="dashbord" class="content">
             <div class="head">
                 <?php Flasher::flash();?>
                 <h2>Edit Profil</h2>
             </div>
         </div>
-        <div class="header-container">
-            <div class="header-text">
-                <h1>
-                    <?php
-                    // Memeriksa apakah email tersedia di session
-                    if (isset($email) && !empty($email)) {
-                        // Jika email ada, tampilkan
-                        echo "Halo, " . htmlspecialchars($email);
-                    } else {
-                        // Jika email tidak ada (belum login), tampilkan pesan
-                        echo "Anda belum login.";
-                    }
-                    ?>
-                </h1>
-                <p>Selamat bekerja, semoga harimu menyenangkan!</p>
-            </div>
-            <img class="header-img" src="<?= BASEURL; ?>/img/gambar.png" alt="Header Image" />
-        </div>
-        <div class="container">
+        <div class="container-profile">
             <form action="<?= BASEURL; ?>profil/updateprofile" method="post" class="profil-form">
                 <?php foreach ($data['user'] as $profil): ?>
                     <?php $imgSrc = '/admin-adek/app/upload/profil/' . $profil['gambar']; ?>
