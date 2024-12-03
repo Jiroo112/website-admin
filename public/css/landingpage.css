@@ -1,0 +1,991 @@
+:root {
+    --primary-color: #008080;
+    --bg-color: #ffff;
+    --navbar-color: #50b498;
+    --secondary-color: #008080;
+  }
+  
+  * {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+    color: black;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: var(--navbar-color);
+    box-shadow: 0 8px 5px rgba(3, 59, 42, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 35px;
+    margin-right: 8px;
+  }
+  
+  .navbar-logo {
+    margin-left: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  .navbar-logo span {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .navbar-nav a {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 3rem;
+    font-size: 1rem;
+  }
+  
+  .navbar .navbar-nav a:hover {
+    color: #def9c4;
+  }
+  
+  .navbar-extra {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-extra a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+  
+  .login-btn,
+  .instagram,
+  .youtube,
+  .whatsApp,
+  #menu {
+    display: flex;
+    background-color: #def9c4;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    max-width: 40px;
+    height: 40px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #menu {
+    display: none;
+  }
+  
+  /* Hero Section */
+  /* Carousel Section */
+  .carousel-container {
+    width: 100%;
+    height: 550px;
+    max-width: 1500px;
+    overflow: hidden;
+    background: #ccfce2;
+    position: relative;
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.8s ease;
+    will-change: transform;
+  }
+  
+  .slide {
+    min-width: 700px;
+    height: 500px;
+    opacity: 0.5;
+    transform: scale(0.8);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .slide-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slide-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    height: auto;
+    margin-top: 8%;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #7f7f7f;
+    cursor: pointer;
+    margin-bottom: 30%;
+    transition: background 0.3s ease;
+    z-index: 1;
+  }
+  
+  .dot.active {
+    background: var(--navbar-color);
+  }
+  
+  /* About Section */
+  .about {
+    padding: 6rem 7% 1.4rem;
+  }
+  
+  .about h2 {
+    text-align: center;
+    font-size: 3.3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .about .row {
+    display: flex;
+  }
+  
+  .about .row .about-img {
+    flex: 1 1 45%;
+  }
+  
+  .about .row .about-img img {
+    width: 100%;
+    border-radius: 20px;
+  }
+  
+  .about .row .content {
+    flex: 1 1 45%;
+    padding: 0 1rem;
+  }
+  
+  .about .row .content h3 {
+    font-size: 2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about .row .content p {
+    font-size: 1.3rem;
+    text-align: justify;
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+  }
+  
+  /* Download buttons */
+  .download-buttons {
+    justify-content: flex-start;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .store-button {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  
+  .store-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .store-badge {
+    height: 60px; /* Sesuaikan dengan kebutuhan */
+    width: 200px;
+  }
+  
+  .features {
+    padding: 6rem 7% 1.4rem;
+  }
+  
+  .features h2 {
+    text-align: center;
+    font-size: 3.3rem;
+    margin-bottom: 3rem;
+  }
+  .features p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .features-container .image {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .features-container .image img {
+    max-width: 85%;
+    height: auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    color: #fff;
+    background-color: var(--navbar-color);
+    border: 1px solid var(--navbar-color);
+  }
+  
+  .feature-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  /* Container untuk slider */
+  .testimonials {
+    padding: 4rem 2rem;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 3rem;
+  }
+  
+  /* Swiper container */
+  .testimonialSwiper {
+    padding: 2rem;
+    padding-bottom: 4rem;
+  }
+  
+  /* Card styling */
+  .testimonial-card {
+    background: var(--navbar-color);
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(9, 117, 83, 0.4); /* Bayangan hijau */
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-top: -3.5rem;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .comment {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Navigation buttons */
+  .swiper-button-next,
+  .swiper-button-prev,
+  .next,
+  .prev {
+    color: #000;
+    background-color: #def9c4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 1.2rem;
+  }
+  
+  /* Pagination bullets */
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(126, 123, 123);
+    opacity: 0.5;
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #23c489;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .testimonial-card {
+      margin: 0 auto;
+      max-width: 350px;
+    }
+  }
+  /* FAQ Section */
+  .faq {
+    padding: 6rem 7% 1.4rem;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: flex-start;
+  }
+  
+  .faq-wrapper {
+    display: flex;
+    /* max-width: 1200px; */
+    width: 100%;
+    gap: 0px;
+    align-items: flex-start;
+  }
+  
+  .illustration {
+    flex: 0 0 300px;
+    position: sticky;
+    top: 100px;
+  }
+  
+  .illustration img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: 0;
+    flex: 1;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 3.3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .faq-item {
+    background: #f5f5f5; /* Changed to white to match the image */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .faq-question:hover {
+    background-color: var(--navbar-color);
+    color: #fff;
+  }
+  
+  .faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  .faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 300px;
+  }
+  
+  .faq-question::after {
+    content: "-"; /* Changed to match the image */
+    font-size: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+  }
+  
+  /* Contact Section */
+  .contact {
+    padding: 6rem 7% 1.4rem;
+    max-width: 100%;
+  }
+  
+  .contact h2 {
+    text-align: center;
+    font-size: 3.3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .contact p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+  
+  .icon-container {
+    width: 40px;
+    height: 40px;
+    background: #def9c4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-container i {
+    color: white;
+    font-size: 20px;
+  }
+  
+  .contact-item-content h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: #111;
+  }
+  
+  .contact-item-content p {
+    color: #111;
+    margin: 0;
+  }
+  
+  .maps {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    width: 100%;
+    background-color: var(--navbar-color);
+    text-align: center;
+    color: #fff;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+  }
+  footer .socials a{
+    display: none;
+  }
+  footer .links a:hover {
+    color: #f4ce14;
+  }
+  
+  footer .links {
+    margin-bottom: 1.4rem;
+  }
+  
+  footer .links a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+  
+  footer .credit {
+    font-size: 0.8rem;
+  }
+  
+  footer .credit a {
+    color: bisque;
+    font-weight: 700;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1366px) {
+    html {
+      font-size: 75%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 62.5%;
+    }
+    #menu {
+      display: flex;
+    }
+  
+    .navbar .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: var(--navbar-color);
+      width: 24rem;
+      height: 100vh;
+      transition: 0.3s;
+    }
+  
+    .navbar .navbar-nav.active {
+      right: 0;
+    }
+  
+    .navbar .navbar-nav a {
+      color: #222;
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+    }
+  
+    .navbar .navbar-nav a::after {
+      transform-origin: 0 0;
+    }
+  
+    .navbar .navbar-nav a:hover::after {
+      transform: scaleX(0.2);
+    }
+  
+    .about .row {
+      flex-wrap: wrap;
+    }
+  
+    .contact .row {
+      flex-wrap: wrap;
+    }
+  
+    .contact .row .maps {
+      height: 30rem;
+    }
+  
+    .contact .row form {
+      padding-top: 0;
+    }
+  
+    .carousel-container {
+      height: 400px;
+      padding: 20px 30px;
+    }
+  
+    .carousel {
+      display: flex;
+      transition: transform 0.8s ease;
+      will-change: transform;
+    }
+  
+    .slide {
+      flex: 0 0 100%;
+      width: 80%;
+      height: 350px;
+      padding: 0 10px;
+      opacity: 0.5;
+      transform: scale(0.9);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      display: block;
+      flex-direction: column;
+  
+      text-align: center;
+    }
+  
+    .slide-image img {
+      max-width: 80%;
+      border-radius: 15px;
+      margin-top: 10%;
+      margin: 10% 20px 20px 0px;
+    }
+    .dots {
+      gap: 8px;
+    }
+  
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-bottom: 20%;
+    }
+    .about .row {
+      flex-direction: column; /* Atur elemen menjadi kolom */
+    }
+  
+    .about .row .about-img,
+    .about .row .content {
+      flex: none; /* Hilangkan aturan flex sebelumnya */
+      width: 100%; /* Atur lebar penuh */
+    }
+  
+    .about .row .about-img img {
+      width: 100%; /* Sesuaikan ukuran gambar untuk layar kecil */
+      margin: 0 auto; /* Pusatkan gambar */
+      text-align: center;
+    }
+  
+    .about .row .content {
+      padding-top: 10px; /* Tambahkan ruang di sekitar teks */
+    }
+  
+    .about .row .content h3 {
+      font-size: 1.8rem; /* Sesuaikan ukuran sub-heading */
+    }
+  
+    .about .row .content p {
+      font-size: 1.2rem; /* Sesuaikan ukuran teks */
+      line-height: 1.6; /* Tambahkan jarak antar baris */
+    }
+  
+    .download-buttons {
+      justify-content: center; /* Pusatkan tombol unduhan */
+      gap: 1rem;
+    }
+  
+    .store-button {
+      width: 100%; /* Buat tombol mengambil lebar penuh */
+      max-width: 200px; /* Batasi ukuran maksimum tombol */
+      margin: 0 auto; /* Pusatkan tombol */
+    }
+  
+    .store-badge {
+      height: 60px; /* Sesuaikan dengan kebutuhan */
+      width: 200px;
+    }
+  
+    .contact {
+      padding: 4rem 5% 1.4rem;
+    }
+  
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+  
+    .contact p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  
+    .contact-info {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .contact-container {
+      gap: 20px;
+    }
+  
+    .contact-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+    .hero {
+      min-height: 30;
+    }
+  
+    .instagram,
+    .youtube,
+    .whatsApp {
+      display: none;
+    }
+  
+    .slide-image img {
+      width: 60%;
+      border-radius: 15px;
+      margin-top: 10%;
+      margin: 10%;
+    }
+    .store-badge {
+      height: 35px;
+    }
+  
+    .store-button {
+      width: 100%; /* Buat tombol mengambil lebar penuh */
+      max-width: 200px; /* Batasi ukuran maksimum tombol */
+      margin: 0 auto; /* Pusatkan tombol */
+    }
+  
+    .store-badge {
+      height: 35px; /* Sesuaikan dengan kebutuhan */
+      width: 150px;
+      text-align: center;
+    }
+    .contact {
+      padding: 4rem 5% 1rem;
+    }
+  
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+  
+    .contact p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  
+    .contact-info {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+  
+    .contact-container {
+      gap: 20px;
+    }
+  
+    .contact-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .icon-container {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .icon-container i {
+      font-size: 16px;
+    }
+  
+    .contact-item-content h3 {
+      font-size: 0.8rem;
+    }
+  
+    .contact-item-content p {
+      font-size: 0.9rem;
+    }
+  
+    .maps {
+      height: 300px;
+      border-radius: 10px;
+    }
+  
+    .faq {
+      padding: 3rem 4% 1rem; /* Kurangi padding agar sesuai layar kecil */
+      flex-direction: column; /* Atur tata letak menjadi kolom */
+      gap: 20px; /* Sesuaikan jarak antar elemen */
+    }
+  
+    .faq-wrapper {
+      gap: 20px; /* Tambahkan jarak antar elemen */
+      align-items: center; /* Pusatkan elemen */
+    }
+  
+    .illustration {
+      flex: 0 0 auto; /* Ubah agar mengikuti konten */
+      position: static; /* Nonaktifkan sticky di layar kecil */
+      width: 60%; /* Sesuaikan lebar gambar */
+    }
+  
+    .faq-container {
+      max-width: 100%; /* Ambil seluruh lebar layar */
+      margin: 0 auto; /* Pusatkan elemen */
+    }
+  
+    h1 {
+      font-size: 2rem; /* Kurangi ukuran font untuk layar kecil */
+      margin-bottom: 2rem; /* Kurangi jarak bawah */
+    }
+  
+    .faq-item {
+      margin-bottom: 15px; /* Tambahkan margin bawah */
+    }
+  
+    .faq-question {
+      font-size: 1rem; /* Sesuaikan ukuran font */
+      padding: 15px; /* Kurangi padding */
+    }
+  
+    .faq-answer {
+      padding: 0 15px; /* Sesuaikan padding jawaban */
+      font-size: 0.9rem; /* Sesuaikan ukuran font jawaban */
+      line-height: 1.4; /* Kurangi tinggi baris */
+    }
+  
+    .faq-question::after {
+      font-size: 18px; /* Sesuaikan ukuran simbol */
+    }
+  
+    .features {
+      padding: 3rem 5% 1rem; /* Kurangi padding untuk layar kecil */
+    }
+  
+    .features h2 {
+      font-size: 2rem; /* Kurangi ukuran font heading */
+      margin-bottom: 2rem; /* Kurangi jarak bawah */
+    }
+  
+    .features p {
+      font-size: 1rem; /* Kurangi ukuran font paragraf */
+      margin-bottom: 2rem; /* Kurangi jarak bawah */
+    }
+  
+    .features-container {
+      grid-template-columns: 1fr; /* Ubah grid menjadi satu kolom */
+      gap: 1.5rem; /* Kurangi jarak antar elemen */
+    }
+  
+    .features-container .image img {
+      max-width: 100%; /* Pastikan gambar menyesuaikan dengan lebar layar */
+    }
+  
+    .grid {
+      grid-template-columns: 1fr; /* Ubah grid menjadi satu kolom */
+      gap: 1.5rem; /* Kurangi jarak antar elemen */
+    }
+  
+    .feature-card {
+      padding: 1.5rem; /* Kurangi padding untuk elemen kartu */
+      text-align: center;
+    }
+  
+    .feature-card img {
+      width: 80px; /* Kurangi ukuran gambar */
+      height: 80px;
+      margin-bottom: 0.8rem; /* Kurangi jarak bawah gambar */
+    }
+  
+    .feature-card h3 {
+      font-size: 1.2rem; /* Kurangi ukuran font heading kartu */
+      margin-bottom: 0.8rem; /* Kurangi jarak bawah heading */
+    }
+  
+    .feature-card p {
+      font-size: 0.9rem; /* Kurangi ukuran font paragraf kartu */
+      line-height: 1.3; /* Kurangi tinggi baris */
+    }
+    footer .socials {
+      display: flex;
+      padding: 1rem 0;
+      justify-content: center;
+    }
+    footer .socials a {
+      color: #fff;
+      margin: 1rem;
+      display: flex;
+    }
+  
+    footer .socials a:hover,
+    footer .links a:hover {
+      color: #f4ce14;
+    }
+  }
+  
