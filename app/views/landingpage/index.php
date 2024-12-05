@@ -34,9 +34,9 @@
       <a href="#contact">Kontak</a>
     </div>
     <div class="navbar-extra">
-      <a href="login/index.php" class="login-btn"><i data-feather="user"></i></a>
-      <a href="https://www.instagram.com/" class="instagram"><i data-feather="instagram"></i></a>
-      <a href="https://youtube.com/@jessichaalvina4143?si=NDwDkQlCOm1vkRLz" class="youtube"><i data-feather="youtube"></i></a>
+      <a href="login" class="login-btn"><i class="fa fa-user" style="font-size:24px"></i></a>
+      <a href="https://www.instagram.com/" class="instagram"><i class="fa fa-instagram" style="font-size:24px"></i></a>
+      <a href="https://youtube.com/@jessichaalvina4143?si=NDwDkQlCOm1vkRLz" class="youtube"><i class="fa fa-youtube" style="font-size:24px"></i></a>
       <a href="https://wa.me/qr/XTOYMK4MV3YSO1" class="whatsApp"><i class="fa fa-whatsapp" style="font-size:24px"></i></a>
       <a href="#" id="menu"><i data-feather="menu"></i></a>
     </div>

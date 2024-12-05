@@ -11,7 +11,7 @@
                 <input type="text" id="id_user" name="id_user" placeholder="5 character" required />
             </div>
             <div class="form-group">
-                <label for="nama_user">Nama User</label>
+                <label for="nama_user">Nama Lengkap</label>
                 <input type="text" id="nama_user" name="nama_lengkap" required />
             </div>
             <div class="form-group">

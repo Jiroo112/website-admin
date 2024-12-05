@@ -3,6 +3,7 @@
 class Login extends Controller{
 
     public function index(){
+        session_destroy();
         $data['js'] = 'login.js';
         $data['css'] = 'login.css';
         $this->view('templates/headerdefault', $data);

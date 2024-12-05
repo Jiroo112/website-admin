@@ -16,6 +16,7 @@ function validateInputs() {
         } else {
             input.classList.remove("error");
         }
+        
     });
 
     return valid;

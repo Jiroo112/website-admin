@@ -35,7 +35,7 @@ class Login_model{
             if (!empty($user['email']) && !empty($user['password'])) {
                 if ($user['email'] === $data['email'] && password_verify($data['password'], $user['password'])) {
                     Flasher::setFlash('Login', 'berhasil', 'success');
-                    header('Location: ' . BASEURL . 'starup');
+                    header('Location: ' . BASEURL . 'RealLandingpage');
                     exit;
                 }
             }
@@ -58,7 +58,6 @@ class Login_model{
         // Hash password sebelum disimpan ke database
         $hashedPassword = password_hash($data['pasword'], PASSWORD_DEFAULT);
     
-        // Siapkan query dan binding untuk semua parameter
         $this->db->query($query);
         $this->db->bind('id_user', $data['id_user']);
         $this->db->bind('nama_lengkap', $data['nama_lengkap']);
