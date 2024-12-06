@@ -44,6 +44,7 @@ $(function(){
                 $("#resep").val(data.resep);
                 $("#fileName").html(data.gambar);
                 $("#satuan").val(data.satuan);
+                $("#gula").val(data.gula);
                 console.log(data);
             }      
         });
@@ -91,7 +92,7 @@ $(function(){
                 $("#no_hp").val(data.no_hp);
                 $("#berat_badan").val(data.berat_badan);
                 $("#tinggi_badan").val(data.tinggi_badan);
-                $("#umur").val(data.umur);
+                $("#tanggal_lahir").val(data.tanggal_lahir);
                 $("#tipe_diet").val(data.tipe_diet);
                 $("#gender").val(data.gender);
                 $("#fileName").html(data.gambar);
@@ -230,8 +231,10 @@ $(function(){
                 $("#id_olahraga").val(data.id_olahraga);
                 $("#nama_olahraga").val(data.nama_olahraga);
                 $("#deskripsi").val(data.deskripsi);
+                $("#cara_olahraga").val(data.cara_olahraga);
                 $("#username").val(data.username);
                 $("#fileName").html(data.gambar);
+                $("#kalori").val(data.kalori);
                 console.log(data);
             }      
         });

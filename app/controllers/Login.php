@@ -30,7 +30,20 @@ class Login extends Controller{
 
         if($data['pasword'] !== $data['Re-password']){
             Flasher::setFlash('Password', 'dan Re-password harus sama', 'error');
-        }else{
+            header('Location: '. BASEURL . 'login/register');
+            exit;
+        }
+        elseif(strlen($data['id_user']) !== 5){
+            Flasher::setFlash('Username', 'harus 5 karakter', 'error');
+            header('Location: '. BASEURL . 'login/register');
+            exit;
+        }
+        elseif(strlen($data['pasword']) < 6){
+            Flasher::setFlash('Password', 'harus minimal 6 karakter', 'error');
+            header('Location: '. BASEURL . 'login/register');
+            exit;
+        }
+        else{
             try{
                 if($this->model('Login_model')->tambahDataUser(($data))){
                 Flasher::setFlash('User', 'berhasil ditambahkan', 'success');

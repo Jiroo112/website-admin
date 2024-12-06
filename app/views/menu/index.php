@@ -71,6 +71,7 @@
               <th>Resep</th>
               <th>Gambar</th>
               <th>Satuan</th>
+              <th>Gula</th>
               <th>Aksi</th>
             </tr>
           </thead>
@@ -88,6 +89,7 @@
                 <td><?= $menu['resep']; ?></td>
                 <td><img src="<?= $imgSrc; ?>" alt="Gambar Menu" width="75" height="75"></td>
                 <td><?= $menu['satuan']; ?></td>
+                <td><?= $menu['gula']; ?></td>
                 <td><a href="<?= BASEURL; ?>menu/edit/<?= $menu['id_menu'] ?>" id="editMenu" onclick="event.preventDefault(); openModal();"><i class="bx bx-edit-alt editMenu-icon" title="Edit" data-id="<?= $menu['id_menu']; ?>"></i></a>
                   <a href="<?= BASEURL; ?>menu/hapus/<?= $menu['id_menu'] ?>" onclick="return confirm('yakin?');"><i class="bx bx-trash delete-icon" onclick="" title="Delete"></i></a>
                 </td>
@@ -162,6 +164,10 @@
                 <option value="mangkuk">Mangkuk</option>
                 <option value="pcs">Pcs</option>
               </select>
+            </div>
+            <div class="form-group">
+              <label for="gula">Gula</label>
+              <input type="number" id="gula" name="gula" required />
             </div>
           </div>
         </div>

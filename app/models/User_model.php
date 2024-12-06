@@ -25,7 +25,7 @@ class User_model{
     }
 
     public function tambahDataUser($data){
-        $query = "INSERT INTO data_pengguna VALUES (:id_user, :nama_lengkap, :email, :password, :no_hp, :berat_badan, :tinggi_badan, :umur, :tipe_diet ,:gender, :gambar)";
+        $query = "INSERT INTO data_pengguna VALUES (:id_user, :nama_lengkap, :email, :password, :no_hp, :berat_badan, :tinggi_badan, :tanggal_lahir, :tipe_diet ,:gender, :gambar)";
 
         $fileName = $data['gambar']['name'];
         $uploadDirectory = "../app/upload/user/";
@@ -41,7 +41,7 @@ class User_model{
         $this->db->bind('no_hp', $data['no_hp']);
         $this->db->bind('berat_badan', $data['berat_badan']);
         $this->db->bind('tinggi_badan', $data['tinggi_badan']);
-        $this->db->bind('umur', $data['umur']);
+        $this->db->bind('tanggal_lahir', $data['tanggal_lahir']);
         $this->db->bind('tipe_diet', $data['tipe_diet']);
         $this->db->bind('gender', $data['gender']);
         $this->db->bind('gambar', $fileName);
@@ -76,7 +76,7 @@ class User_model{
         no_hp = :no_hp,
         berat_badan = :berat_badan,
         tinggi_badan = :tinggi_badan,
-        umur = :umur,
+        tanggal_lahir = :tanggal_lahir,
         tipe_diet = :tipe_diet,
         gender = :gender,
         gambar = :gambar
@@ -99,7 +99,7 @@ class User_model{
     $this->db->bind('no_hp', $data['no_hp']);
     $this->db->bind('berat_badan', $data['berat_badan']);
     $this->db->bind('tinggi_badan', $data['tinggi_badan']);
-    $this->db->bind('umur', $data['umur']);
+    $this->db->bind('tanggal_lahir', $data['tanggal_lahir']);
     $this->db->bind('tipe_diet', $data['tipe_diet']);
     $this->db->bind('gender', $data['gender']);
     $this->db->bind('gambar', $fileName);

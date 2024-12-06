@@ -52,8 +52,8 @@ class Login_model{
         $gambar = !empty($data['gambar']) ? $data['gambar'] : "";
     
         $query = "INSERT INTO data_pengguna 
-                  (id_user, nama_lengkap, email, password, no_hp, berat_badan, tinggi_badan, umur, tipe_diet, gender, gambar)
-                  VALUES (:id_user, :nama_lengkap, :email, :password, :no_hp, :berat_badan, :tinggi_badan, :umur, :tipe_diet, :gender, :gambar)";
+                  (id_user, nama_lengkap, email, password, no_hp, berat_badan, tinggi_badan, tanggal_lahir, tipe_diet, gender, gambar)
+                  VALUES (:id_user, :nama_lengkap, :email, :password, :no_hp, :berat_badan, :tinggi_badan, :tanggal_lahir, :tipe_diet, :gender, :gambar)";
         
         // Hash password sebelum disimpan ke database
         $hashedPassword = password_hash($data['pasword'], PASSWORD_DEFAULT);
@@ -66,7 +66,7 @@ class Login_model{
         $this->db->bind('no_hp', $data['no_hp']);
         $this->db->bind('berat_badan', $data['berat_badan']);
         $this->db->bind('tinggi_badan', $data['tinggi_badan']);
-        $this->db->bind('umur', $data['umur']);
+        $this->db->bind('tanggal_lahir', $data['tanggal_lahir']);
         $this->db->bind('tipe_diet', $data['tipe_diet']);
         $this->db->bind('gender', $data['gender']);
         $this->db->bind('gambar', $gambar); // Binding gambar

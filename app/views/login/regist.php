@@ -55,8 +55,8 @@
                 <input type="number" id="tinggi_badan" name="tinggi_badan" required />
             </div>
             <div class="form-group">
-                <label for="umur">Umur</label>
-                <input type="number" id="umur" name="umur" required />
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir" required />
             </div>
             <div class="form-group">
                 <label for="gender">Gender</label>

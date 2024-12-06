@@ -27,7 +27,7 @@ class Menu_model{
     }
 
     public function tambahDataMenu($data){
-        $query = "INSERT INTO menu VALUES (:id_menu, :nama_menu, :kategori, :protein, :karbohidrat, :lemak, :kalori, :resep, :gambar ,:satuan)";
+        $query = "INSERT INTO menu VALUES (:id_menu, :nama_menu, :kategori, :protein, :karbohidrat, :lemak, :kalori, :resep, :gambar ,:satuan, :gula)";
 
         $fileName = $data['gambar']['name'];
         $uploadDirectory = "../app/upload/menu/";
@@ -46,6 +46,7 @@ class Menu_model{
         $this->db->bind('resep', $data['resep']);
         $this->db->bind('gambar', $fileName);
         $this->db->bind('satuan', $data['satuan']);
+        $this->db->bind('gula', $data['gula']);
 
         $this->db->execute();
 
@@ -79,7 +80,8 @@ class Menu_model{
         kalori = :kalori,
         resep = :resep,
         gambar = :gambar,
-        satuan = :satuan
+        satuan = :satuan,
+        gula = :gula
         WHERE id_menu = :id_menu";
 
     // Handle file upload jika ada file baru
@@ -102,6 +104,7 @@ class Menu_model{
     $this->db->bind('resep', $data['resep']);
     $this->db->bind('gambar', $fileName);
     $this->db->bind('satuan', $data['satuan']);
+    $this->db->bind('gula', $data['gula']);
     $this->db->bind('id_menu', $data['id_menu']);
 
     $this->db->execute();

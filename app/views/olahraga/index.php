@@ -61,9 +61,11 @@
                             <th>Id Olahraga</th>
                             <th>Nama Olahraga</th>
                             <th>Deskripsi</th>
+                            <th>Cara Olahraga</th>
                             <th>Jenis Olahraga</th>
                             <th>Usename</th>
                             <th>Gambar</th>
+                            <th>Kalori</th>
                             <th>aksi</th>
                         </tr>
                     </thead>
@@ -74,9 +76,11 @@
                                 <td><?= $olahraga['id_olahraga']; ?></td>
                                 <td><?= $olahraga['nama_olahraga']; ?></td>
                                 <td><?= $olahraga['deskripsi']; ?></td>
+                                <td><?= $olahraga['cara_olahraga']; ?></td>
                                 <td><?= $olahraga['jenis_olahraga']; ?></td>
                                 <td><?= $olahraga['username']; ?></td>
                                 <td><img src="<?= $imgSrc; ?>" alt="Gambar Buku" width="75" height="75"></td>
+                                <td><?= $olahraga['kalori']; ?></td>
                                 <td><a href="<?= BASEURL; ?>olahraga/edit/<?= $olahraga['id_olahraga'] ?>" id="editOlahraga" onclick="event.preventDefault(); openModal();"><i class="bx bx-edit-alt editOlahraga-icon" title="Edit" data-id="<?= $olahraga['id_olahraga']; ?>"></i></a>
                                     <a href="<?= BASEURL; ?>olahraga/hapus/<?= $olahraga['id_olahraga'] ?>" onclick="return confirm('yakin?');"><i class="bx bx-trash delete-icon" onclick="" title="Delete"></i></a>
                                 </td>
@@ -88,7 +92,7 @@
         </div>
         <div id="addOlahragaModal" class="modal-panel">
             <div class="contain-modal">
-                <form action="<?= BASEURL; ?>olahraga/updateprofile" method="post" id="addolahragaForm" enctype="multipart/form-data">
+                <form action="<?= BASEURL; ?>olahraga/tambah" method="post" id="addolahragaForm" enctype="multipart/form-data">
                     <h2 class="Title-label">Tambah Data Olaharaga</h2>
                     <div class="form-container">
                         <!-- Kolom Kiri -->
@@ -104,6 +108,10 @@
                             <div class="form-group">
                                 <label for="deskripsi">deskripsi</label>
                                 <textarea id="deskripsi" name="deskripsi" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="cara_olahraga">cara olahraga</label>
+                                <textarea id="cara_olahraga" name="cara_olahraga" rows="4" required></textarea>
                             </div>
                         </div>
 
@@ -129,6 +137,10 @@
                                     <span id="fileName">No file chosen</span>
                                     <span id="removeFile" class="remove-file" style="display: none">✖</span>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="kalori">Kalori</label>
+                                <input type="number" id="kalori" name="kalori" required />
                             </div>
                             <div class="button-group">
                                 <button type="submit" class="button button-save" id="submitOlahraga">

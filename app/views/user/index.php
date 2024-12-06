@@ -56,7 +56,7 @@
                             <th>No HP</th>
                             <th>Berat Badan</th>
                             <th>Tinggi Badan</th>
-                            <th>Umur</th>
+                            <th>Tanggal Lahir</th>
                             <th>Tipe diet</th>
                             <th>Gender</th>
                             <th>Gambar</th>
@@ -74,7 +74,7 @@
                                 <td><?= $user['no_hp']; ?></td>
                                 <td><?= $user['berat_badan']; ?></td>
                                 <td><?= $user['tinggi_badan']; ?></td>
-                                <td><?= $user['umur']; ?></td>
+                                <td><?= $user['tanggal_lahir']; ?></td>
                                 <td><?= $user['tipe_diet']; ?></td>
                                 <td><?= $user['gender']; ?></td>
                                 <td><img src="<?= $imgSrc; ?>" alt="Gambar User" width="75" height="75"></td>
@@ -136,8 +136,8 @@
                                 <input type="number" id="tinggi_badan" name="tinggi_badan" required />
                             </div>
                             <div class="form-group">
-                                <label for="umur">Umur</label>
-                                <input type="number" id="umur" name="umur" required />
+                                <label for="tanggal_lahir">Tanggal Lahir</label>
+                                <input type="date" id="tanggal_lahir" name="tanggal_lahir" required />
                             </div>
                             <div class="form-group">
                                 <label for="tipe_diet">Tipe diet</label>
