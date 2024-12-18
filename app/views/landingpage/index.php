@@ -34,10 +34,19 @@
       <a href="#contact">Kontak</a>
     </div>
     <div class="navbar-extra">
-      <a href="login" class="login-btn"><i class="fa fa-user" style="font-size:24px"></i></a>
       <a href="https://www.instagram.com/" class="instagram"><i class="fa fa-instagram" style="font-size:24px"></i></a>
       <a href="https://youtube.com/@jessichaalvina4143?si=NDwDkQlCOm1vkRLz" class="youtube"><i class="fa fa-youtube" style="font-size:24px"></i></a>
       <a href="https://wa.me/qr/XTOYMK4MV3YSO1" class="whatsApp"><i class="fa fa-whatsapp" style="font-size:24px"></i></a>
+      <a href="login" class="login-btn"><i class="fa fa-user" style="font-size:24px"></i></a>
+      <h5 style="margin-left: 10px;">
+            <?php 
+            if (isset($data['nama']) && !empty($data['nama'])) {
+                echo htmlspecialchars($data['nama']);
+            } else {
+                echo "Anda belum login.";
+            }
+            ?>
+            </h5>
       <a href="#" id="menu"><i data-feather="menu"></i></a>
     </div>
 

@@ -15,7 +15,7 @@ class Login_model{
         $admin = $this->db->resultset();
     
 
-        $this->db->query('SELECT email, password FROM data_pengguna');
+        $this->db->query('SELECT * FROM data_pengguna');
         $datauser = $this->db->resultset();
         
         foreach ($admin as $admin1) { 
@@ -35,6 +35,8 @@ class Login_model{
         foreach ($datauser as $user) {
             if (!empty($user['email']) && !empty($user['password'])) {
                 if ($user['email'] === $data['email'] && password_verify($data['password'], $user['password'])) {
+                    $_SESSION['nama'] = $user['nama_lengkap']; 
+                    $_SESSION['email'] = $user['email'];
                     Flasher::setFlash('Login', 'berhasil', 'success');
                     header('Location: ' . BASEURL . 'RealLandingpage');
                     exit;
