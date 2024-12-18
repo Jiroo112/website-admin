@@ -928,6 +928,7 @@ textarea {
     font-weight: 600;
     color: #333;
     font-size: 1rem;
+    padding-top: 20px;
 }
 
 .landing-form input[type="text"]:focus,
@@ -991,7 +992,7 @@ textarea {
 
 .profil-form {
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px;
     display: flex;
     align-items: flex-start;
@@ -1005,23 +1006,25 @@ textarea {
 }
 
 .profile-image img {
-    width: 150px;
-    height: 150px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
-    margin-right: 50px;
+    margin-right: 60px;
 }
 
-.profile-image .change-photo {
+.file-input .change-photo {
     position: absolute;
-    top:70%;
-    left: 60%;
+    top:83%;
+    left: 65%;
     transform: translate(-50%, -50%);
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    font-size: 40px;
+    padding: 0;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
