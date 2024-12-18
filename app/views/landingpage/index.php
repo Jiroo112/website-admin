@@ -106,8 +106,6 @@
         <div class="download-buttons">
         <a href="https://play.google.com/store/apps/details?id=com.adekapp" class="store-button">
         <img src="../app/upload/landingpage/GooglePlay.png" alt="Get it on Google Play" class="store-badge"></a>
-        <a href="https://apps.apple.com/id/app/adekapp" class="store-button">
-        <img src="../app/upload/landingpage/AppStore.png" alt="Download on the App Store" class="store-badge"></a>
         </div>
       </div>
     </div>
@@ -162,7 +160,7 @@
                         <div class="testimonial-content">
                             <h3 class="name">Khalidah Kurania</h3>
                             <p class="comment">
-                                ADEK adalah solusi terbaru bagi Anda yang ingin mencapai gaya hidup sehat dengan cara yang sederhana dan konsisten. Aplikasi ini dirancang khusus untuk memudahkan setiap langkah diet Anda.
+                            ADEK adalah aplikasi berbasis mobile dan website yang dirancang untuk mempermudah pengguna dalam menjalani pola hidup sehat secara efektif dan konsisten dengan berbagai fitur yang mendukung
                             </p>
                         </div>
                     </div>
@@ -251,11 +249,12 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">1. Apa itu aplikasi ADEK?</div>
-                    <div class="faq-answer">ADEK adalah aplikasi yang membantu Anda menjalani program diet secara efektif dan konsisten.</div>
+                    <div class="faq-answer">ADEK adalah aplikasi berbasis mobile dan website yang dirancang untuk mempermudah pengguna dalam menjalani pola hidup sehat secara efektif dan konsisten dengan berbagai fitur yang mendukung
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">2. Bagaimana cara mencatat asupan makanan?</div>
-                    <div class="faq-answer">Anda dapat mencatat asupan makanan langsung melalui fitur "Catat Asupan" di aplikasi.</div>
+                    <div class="faq-answer">Anda dapat mencatat asupan makanan langsung melalui fitur "catatan makanan" lalu pilih makanan yang dikonsumsi dan isi detail form yang disediakan pada aplikasi.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">3. Apa saja fitur unggulan ADEK?</div>
@@ -267,7 +266,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">5. Apa kelebihan Adek dibanding yang lain</div>
-                    <div class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia laudantium nesciunt vitae quaerat. Amet ea labore, rem tempore dolorum optio similique ipsum eligendi ex nihil sed dicta iste excepturi? Error..</div>
+                    <div class="faq-answer">Kelebihan ADEK dibanding yang lain adalah dapat diakses di berbagai device, dapat memberikan rekomendasi sesuai dengan kebutuhan pengguna serta memiliki tampilan simple dan mudah dipahami</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">6.  Saya kurang paham dengan perhitungan asupan makanan harian di Adek</div>
