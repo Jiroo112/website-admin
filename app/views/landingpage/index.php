@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +15,8 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/landingpage.css" />
+  <link rel="icon" type="image/x-icon" href="<?= BASEURL; ?>/img/logo.png">
+  
 </head>
 <body>
   <!-- Navbar -->

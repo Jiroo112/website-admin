@@ -20,7 +20,7 @@
 
         <div class="remember-forgot">
           <label><input type="checkbox" /> Remember me? </label>
-          <a href="#">Forgot password</a>
+          <a href="forgot/email_form">Forgot password</a>
         </div>
 
         <button type="submit" class="btn">Login</button>

@@ -20,7 +20,8 @@ class Login_model{
         
         foreach ($admin as $admin1) { 
             if (!empty($admin1['email']) && !empty($admin1['password'])) {
-                if ($admin1['email'] === $data['email'] && $data['password']=== $admin1['password']) {
+
+                if ($admin1['email'] === $data['email'] && password_verify($data['password'], $admin1['password'])) {
                     $_SESSION['nama'] = $admin1['nama']; 
                     $_SESSION['email'] = $admin1['email'];
                     $_SESSION['username'] = $admin1['username'];

@@ -5,8 +5,6 @@ class Database {
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $db_name = DB_NAME;
-
-
     private $dbh;
     private $stmt;
 
@@ -29,7 +27,8 @@ class Database {
         $this->stmt = $this->dbh->prepare($query);
     }
 
-    public function bind($param, $value, $type = null){
+    public function bind($param, $value, $type = null)
+    {
         if(is_null($type)){
             switch(true){
                 case is_int($value) :
